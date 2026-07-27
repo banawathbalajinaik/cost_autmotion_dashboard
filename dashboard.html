@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<!-- saved from url=(1390)https://ffb3210157d43c51d7ed87e70be474818c67d42c2607cdd749e1380-apidata.googleusercontent.com/download/storage/v1/b/balaji-testing/o/cloud_cost_automation%2Fdashboard.html?jk=AWuF6Pjxy2E_5IsYdrYtFx2i8kppCvI8pFrDr_fDfkQHXiipSnMLJ7eu9ML0ocXOGRnEAlJY_x2YQKDMO0Fnm6IaArPu5Ov-CzX9a8Ux2t3xjxoFhp9YjMGXmEnmjya1YTCmsucxgGh8XbszclqD-Z8gNyZOcFs4f0pySg2MXxs8ImtB50X-gLNhTOhhlUlO0JCSN7hE4Wo1pHPjotBqm8uy7JDIMrRPgjWR74mHVS2PxRgKPMh4e4temB1TAxWrukcVyGyIajsUH8aE70cdsR-8iEqD_XDPvw6VPH8nDkbWdjr3zKLDKQnW6aPvE8opCV8aFWnizqKsJcUY7rDzwE1mxcMqTaGfFESFYA2RRfIrF5L-MpDJthi3U3l_zGL6KqeNYlh2IuqJ5JbhzavLreNYL8nOZTxhFp7uUfpRSg79i8EMNxWAe6VI3dSRw1K20Qk1OYRXBpFYAdsZ7Ht3GPQB7zcX2apu82mEwW6EeJQR6WC-ijqeEPwU672342B7gjStWV9P5sc_aIt5IlDdPwkyv24SUkIrjQ5DqCpK1fc746g5ydx-xBmC5DbvMBaioOhS11Tg7zf_22Hkj_6XV4mtT-acNRwY2dA0nWS25WuNFlDvDmAg1irAZh4t12YjyUxaPvjn0FS6wOjGdc1aTh236vA8JxfCcVSynCk5kAjA63BknmfFVQy41mylEw9XVMAM6KAFw_gP2ZRpC548KA-hV466qBZErrm6Z8rxwuhR5K_wzDbosk1K63dM4UP8JAMlsBgNf9hifqw_MgAWWDE2yxRv7Cc7Wl0qb1lKIdVIF1FqqNx5p1ZWi8rHX1SYpHWea7A5RVeono0z_ZvXg1HKxQzgvgSlssH8GhKsWhl_rU3Yc5vfHe0HYycKdlHfvfvZ1TnvtjRgCGFGNCZar98Uz8GWueSu4aFyHTBYNTIIcmGsSxp53Ac4kGwvyjA6_Ueg1nHm55l7jEIx26WJQE6ni1nnwloiqTwznAjGXrAC40ODftweB7tN3Fhy6yaudpICJ0nM4g_fU1H5pooBDZ-sYOI9MyncSqlsvOHJhXnB9PYcYPsUgw2N7etTT530IH8tFJ5GJHMSaf_AVUmjOhW_2gODdm8ZK3FQbjMDmbUdOL-SpsYSzWLsaY5qWpWHW4005G6WAFdI3oyZW5GPmTgcbr-ucj12N7-FUrEwct0ElyQk_CJYDHzo&isca=1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Cloud Fleet &amp; Spend</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+
+  :root {
+    --bg:        #14161A;
+    --panel:     #1C1F26;
+    --panel-2:   #21252E;
+    --line:      #2A2E38;
+    --text:      #E8EAED;
+    --muted:     #8B92A3;
+    --signature: #5EEAD4;
+    --aws:       #F0A202;
+    --azure:     #4C8DFF;
+    --gcp:       #34D399;
+    --radius:    10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .display   { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  .mono      { font-family: 'IBM Plex Mono', 'SFMono-Regular', monospace; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 40px 28px 80px; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+  header.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+  }
+
+  .hero-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .brand-logo {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  h1.display {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .total-figure {
+    text-align: right;
+  }
+  .total-figure .amount {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--signature);
+  }
+  .total-figure .label {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Signature element: the stacked spend meter -- segment width == share of
+     total combined spend, so the bar itself is a live proportional readout,
+     not decoration. */
+  .spend-meter {
+    display: flex;
+    height: 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--panel-2);
+    margin-top: 18px;
+    border: 1px solid var(--line);
+  }
+  .spend-meter .segment { height: 100%; }
+  .spend-meter-legend {
+    display: flex;
+    gap: 22px;
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .spend-meter-legend .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  .clouds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 22px;
+  }
+
+  .clouds-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0 18px;
+    flex-wrap: wrap;
+  }
+  .filter-bar input[type="text"] {
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    padding: 7px 10px;
+    flex: 1;
+    min-width: 160px;
+  }
+  .filter-bar input[type="text"]::placeholder { color: var(--muted); }
+  .filter-bar select {
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    padding: 7px 10px;
+  }
+
+  .action-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    padding: 3px 9px;
+    border-radius: 5px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .action-btn:hover { border-color: var(--signature); color: var(--signature); }
+  .action-btn.copied { border-color: var(--signature); color: var(--signature); }
+  .ip-cell { color: var(--muted); font-size: 11.5px; }
+  .no-rows-note { color: var(--muted); font-size: 13px; padding: 14px 0; }
+
+  .cloud-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+
+  .cloud-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .cloud-name {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cloud-name .swatch {
+    width: 10px; height: 10px; border-radius: 3px;
+  }
+  .cloud-total {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 18px;
+    margin: 14px 0 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .stat-row b { color: var(--text); font-size: 14px; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 8px;
+  }
+
+  .cost-bar-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 60px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .cost-bar-row .svc {
+    color: var(--muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cost-bar-track {
+    background: var(--panel-2);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .cost-bar-fill { height: 100%; border-radius: 4px; }
+  .cost-bar-row .amt {
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: right;
+    color: var(--text);
+  }
+
+  table.instances {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-top: 4px;
+  }
+  table.instances th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--line);
+    padding: 6px 8px 6px 0;
+  }
+  table.instances td {
+    padding: 7px 8px 7px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  table.instances tr:last-child td { border-bottom: none; }
+
+  .state-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .state-running { background: rgba(52,211,153,0.15); color: #34D399; }
+  .state-stopped { background: rgba(139,146,163,0.15); color: var(--muted); }
+  .state-other   { background: rgba(240,162,2,0.15); color: var(--aws); }
+
+  .empty-note {
+    color: var(--muted);
+    font-size: 13px;
+    padding: 18px 0;
+  }
+
+  .scroll-table { max-height: 460px; overflow-y: auto; overflow-x: auto; }
+  table.instances { min-width: 900px; }
+
+  .account-row {
+    display: grid;
+    grid-template-columns: 1fr 70px 90px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .account-row:last-child { border-bottom: none; }
+  .account-row .acct-name { color: var(--text); }
+  .account-row .acct-count { color: var(--muted); font-family: 'IBM Plex Mono', monospace; }
+  .account-row .acct-cost { font-family: 'IBM Plex Mono', monospace; text-align: right; }
+
+  .tab-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tab-btn {
+    appearance: none;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transform: translateY(1px);
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--signature);
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  table.resource-cost {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  table.resource-cost th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 10px 8px 0;
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+  }
+  table.resource-cost td {
+    padding: 8px 10px 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  table.resource-cost td.cost-cell { text-align: right; color: var(--text); }
+  table.resource-cost td.cost-cell.no-data { color: var(--muted); }
+  table.resource-cost tr:last-child td { border-bottom: none; }
+  .cloud-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cloud-tag .swatch { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+
+  .resource-cost-wrap {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .resource-cost-scroll { max-height: 620px; overflow-y: auto; }
+  .coverage-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .overview-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .overview-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .overview-card .oc-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .overview-card .oc-amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .overview-card.grand .oc-amount { color: var(--signature); font-size: 26px; }
+
+  .daily-cost-wrap {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 22px;
+  }
+  table.daily-cost {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  table.daily-cost th {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 10px;
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+  }
+  table.daily-cost th:first-child, table.daily-cost td:first-child { text-align: left; }
+  table.daily-cost td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: right;
+  }
+  table.daily-cost td.total-cell { color: var(--signature); font-weight: 500; }
+  table.daily-cost tr:last-child td { border-bottom: none; }
+  .daily-cost-scroll { max-height: 360px; overflow-y: auto; }
+
+  .suggestions-wrap {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 28px;
+  }
+  .suggestion-row {
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .suggestion-row:last-child { border-bottom: none; }
+  .sug-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    height: fit-content;
+    text-align: center;
+  }
+  .sug-high { background: rgba(240,162,2,0.15); color: var(--aws); }
+  .sug-medium { background: rgba(76,141,255,0.15); color: var(--azure); }
+  .sug-info { background: rgba(139,146,163,0.15); color: var(--muted); }
+  .sug-text b { color: var(--text); }
+
+  footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-left">
+      <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAABVCAYAAACVWHK2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAABB7SURBVHhe7Z19UBznfce/d7QSCIRknSwEh9a1JLBkRyJC0p2kUxwH48hTJzrrkihcFOSkjd1mzDWdTozMeNymnmmIcSczLeRlkk5riUmOjFusw2n9EhnHjk426AWBPZUQtmwvnIBipApZUAvk6x97u9w9t89ze4BgWf0+MzfAs8/uPre33+f39uxhi45FoyAIwnLY2QaCIKyBbeCDIbLcBGFBbJk5xSRugphn2Gw2ZGYuxKrCfOzYvhmV+3zYsWNzYh8SN0HMfxYtysSO7Vvw/b95BJ+/2w0AyPijBY4fsB0JgphfjI9P4Pz7Ml565XVEP41ix/bNZLkJwmosXLgAf/atvSRugrAiCxcuoFIYQViRTz65RuImCKtC4iYIi0LiJgiLQuImCItC4iYIi0LiJgiLQuImCItC4iYIi0LiJgiLQuImCItC4iYIi0LiJgiLQuImCItC4iYIi0LiJog4ln/Hhz/OX842z0tI3AQRx7Iv3o0V3/oK2zwvIXETRIy8h76KTEceHPfdgwUrb2U3zztI3AQRo2Df15AxYUfGhB0rv/lVdvO8g8RNEADyv7EX9mt22MdtsI/bcOs9X8CCvPltvUncBAFg1d6vI+O6HRkTGciYyID9egZWBwJst3kFiZu46SncWxGz2KrltiNj3Ial6zZg4YoVbPd5A4mbuKlZeOsK3LbHH7PYdkR+8xw+7vpv2GN/F/3lX7G7zBtI3MRNTd7Oci3Oto/b0PvvQfQ+16T9vbRoI/I+dy+727yAxE3ctGQuz8PtX96nxNgTGej9j98AAC6feRtDv39Ns+Yrd5Qjc3keu7vpIXETNy352+9DxrgN9gk7rg38Dz44/Ctt24eHf41PBoZgH7dj2ZoS3FK8IWHf+cBN+Y8AJcmJJUtyk16XL19hu1qKm/V965HlyMNnH/4B7J/aYY/a0PtqCJd6urTtE2NXscS5BrkFa2H/1I5c5xoMdb2JibGrCccxMzfd/wrzeFwItTSyzQCA5Y472CZLcaqjFZLkZJsRqKpBMNjMNluaNfdXYu39lYgC+L+Lg3jjqUq2C7KW5WFL4BlkLVsJAHjn1/+IC22vsN1Mi+nF7ff7UFHxINucgNe7n23iQuK+MeIOhQ6xTRqBQA1kOcI2a3g8LlRXV7HNGul8vqko3LoLy1aXwLl1F2wAooji3d81ouflg2xXAEDRrv1Y+0Xl/GOXBhE5/jKG3+vE2MVBjF0cYLubCtOLm3dDxuPdXYlwuJ1t1oXEnXwtZ0Lc9Q218Pt9bDMAIBhsRqCqhm3WEO073bFl3bISy1d/FoWlu+BYXaK1RwHYbMDoxQG01n0jYZ94sm5Zie2P/BhZt6xEbDZQfgIYPn8afSdexvD5ToxdMp/QTZ9Q07sZWTw73WwTMcs8U9fANml4PG7u5yhJTq6ww0fbpiXsdWXfxs5v/xNKH6zBCqlUy4qrq9AyJjJw6d3JOFuPsUsDsF9X1puzrxVSKUp9Nbjv+01YVXo/u+ucY2px8z50loqKPWwTMcvIcoRrnSXJicc4bjevHQDqBBOGEc62/ht+9+Ovo/vIQYwNDSbUs9XXbZ/5UyxaqsTUeixauhI52QXK6jVt7bkd9ms2XOzpxOnnnkbLE/eg99RL7K5zjqnFnSrWVpEkJzweF9tMzDLhcBvCR9vYZiBmvfXgTeDBYLPhUCsVZ1//V7zyz3tx9OD3cPG9Tm31mfrzTzY+wO6iseVLTzAWOwN9J19C+Nm/xtFnvwf59IvsLqbB1OLWc7d5bppeX2J2keUI19pKkhP1DbUJbezf8Yjc/Kky9GEH3vhVAG80BiB3vKjUuMftuGvbnyN7ST7bHdlL8pFXsDm25tyOky0/xEsNX8OJF36IoQ872O6mw7Ti5s3oTcHn2SYAgGfHVraJmAPC4XbD1pv3GdfVNQiz61MhOzcft9/1JWTn5mOo9xSOv/gPGLs4qD0J9plt32F3gXvXk4q1vm7H8Aen8cHb/4Wrl/sBALff9QCyc5MnBDNh2my5XgZVliMo3VSGUOhQkqVWt6Ui3Ww5LxGkIroJlXDBjVXMMXrlCGS5b1pup8fjgiQVasdWj9nbG+GOyWi2XJKcqIhd+6mMVZKcONXRyjYDcefy+326ltvo55guG1wPY4PrYQxGTuL9s/+J82d+izznZty752da9jt00IurI4p485ybca/vZ1p6XN22wrkZ2+57Etm5+Xin7V/wdtsvE09kIkwr7o+Gu9kmraSiJ3zo3KR6pCtuvYlEJXy0LakGqwpDVLdVkeUImpqeR93T9ewmLrz3Hk/4aBvq6hqSBJlK3DzBIXbMVPXqeHjjFE3QSLOsaZScxQXYs68lVsOK4pWWv8DghZMAgD37WpCTWwAAeO/sCzj22t8r7d9sQc7iAkQBnO9+AcdalfaNWx9BydZHtIrY84278fGVC3FnMw+mdMv1bgoAOBY+Dghcc6MJOKP4/T7dGxAcYVcfCOBUR6shYSM2EVRXV3EFFY/f78NHw93caxMPb8wiqg8EhOPw7HTjcKjRcOKSFzNLkhPVBwK6YwwfbZtxYQPA2qLdStw8YcPopQFN2ADwZutTWkxdtMaLnMUFWJm/BbmZhdpz3V3HJ61z1/FfYPTigJZtX1P8ZW2b2TCluHd49OPncFiJ5Xp79a3HKqmQbZoyegkgFVmOJAkbAJpSeA08RBYTKcaihyxH0hJJfUOtoQlJGceP2GZdRKUx3rl4ybjpkJNTgNIN39Uy3cdeT3yUYqD/BMb+d0DLhn/O8xTu9jylxdpdJ36ZZJnPd/9Wq5OXbvwucnIUy282TCluNvGCmEuuuoSyHNFN2sxkSay+Xl9MshzBg97kdcgQjEttF7m0fr+PO/bDIf0wQkWWE+PsXrkvYftMks41FpXGWGay9BVP8e1erTY92HcC/QMn2C74wx/+TrPeTsdW5C4sVPa5ZkfH6Z+z3dHR8XOMXuqHLWa9i1d72S6mwHTi9vt9unEhS/iY4qKz8KxCOvDcRgAIVD0uFGn42HHIsZLQcscdWO64A6WbyuD17kfppjKUbirj7q83dklycq9H6aYy7film8rg3V2JYLAZTU2H2a6GUMcdP5HqoTdOPdTjGYFn5afD4mwntq5/VLPKb7z5t2wXAED/4HGMXu7XrLv683RnsrBV3n33Ba3vljsfxeJs/c9oLjGduHkuORtn81zg6brmahysh5FkT1OwGaWbyrhJMsVdfZxtBjhj1/NiwHgyKuFwu6Gkoh7BuHEHqmrwoLcy6fgqeuPkISqNqdwIYQPA1nWPahZ5oP8ErlzVfz8A8Pu2J2N9FSv/8eV+nHjnp2w3jZPv/BRXL/dr+9xx28zme2YC04mbdzOzouK5wOm4jXrw3HEjwkZsXHqo4xIl6URWmkXkxqdL+GhbksBkOSJMihkdpxF4E/p0yF3kxJ0FX9Gs8Gsnn2C7JHBhqD3Bco9eUUpiInreD2n7uIuqsHjRzF2TmcB04ta7aXiWiOeaV/inttacJ7xAVY0hYccjxbLCodAhfDTcjVMdrQi1NKZMXq1alfj+ZUH8HGppRCh0yHAow4N3HdUEph7sOHnwrmk8MzlRqbjWVsH2KYDrNkSG2jAyqj/pqriKArBdtwETNtiu21C41I3cLPF7bD/bgI9HLsA+oXyby52FqSsZs4mpxM0r83g8boRCh5JevAdGeNY/FbyMtEhgLEpGuVYriaW6sVMRDrdzvQHESlTq+eobaqck8l7B8aeL6MGQeIxm4Y2Qm+XE+lXKvWSzAa92it3+3Cwn3MXKOG2xBS0A4NvemFrgPT/RfncVVaXsP5uYSty8OrUkOeHZ6U568W7k6brmLPUNP+KeKx5JcuJwqJE7SU0VUfwbj9/vw+FQo6GxGsHIOUVUHwgYHoskePQzXcpLJifpvuE2jIyJ30d8/3gWZzmxPoU1PtPXnOAVpOo/m5hK3NO1cvHM5LEkwSOL8dTX8y2nmiMIBpsNZ5BV5Fj5zYjYpNjST944ZgtJkJjkhVlGrnEqcrOccDomP/tUVru8pDahf3tPA870TY7PVVyVUrDtPZOfp6vYPNbbNOKeqVlbheeyp4InIL/fJxyjKLasq2vQymGBqhrUPV3PPQ8PObZs07u7UjeRyMJLDM4WvPPX1TUIE3W80Mgo98ZZ4faeBqHVXl/ow7o44Y6MRtB2rh7t5xowMqqEYtHYBCASrGK9J0M3NSSYa0wjbl7GVI4t0OC9eEzFNU9lIR+rruJaRN74g8FmbllsKoTD7fB692s1bd5YRWHLjcbjcXEnuqbYmHnW2+Nxp/25qTgdLhTGWeEzvfrnAAB3cQDlJbXqMyMAgCNdSolyZCyCsxFlrYC6/aGyVjgd/HEd6Zr0EMwSe5tG3Dyr+EzM6vFe3t36q8UwBddcXaAitCwci8RL4qnr4VmmKzy1pi2ajIxmtGcakTuujlV0jXn7p6K8ZDIp136Ob7V92w7BVZR4jjN9zYgMT1ZE2s7VJ+3v29YId1FAV7iR4faE/q5Ygm4uMYW4ecJGinIMBOvMgfSf8VbLXcFgM9f19ex0o/pA8n9/TEesom8K1UN5vFP/+DxhzxWi8CR+IZLQeu9M33o7Ha4E0cXHzSrrC30xC5w4vitjERzRic2ff7MySeCu4qpYnJ54PgA40jm5OGl9oS9p+2xjCnHzXNpUrjcEi1kwBcsdTyCQ/GGrVFTsSbr5eGN4rLpK6ysJnojiIUlOhFoacTjUqOwbJ3SPxyXMSKdbm58JeEkxvbXjPOuNKZTGyjcqHlU0mhhrry/0obykFg994VWUl9RicWbitRoZ7cOzrfrPj4+MRXCk8/GEbHg0Cjgdbvi2NeKhsla4igJwOlxwOly4MhpJCAXm2nqbQtw8lzaV1VYRZZ9FXoEIWbAuWkn8JN58vPXcqjjVhSzpupzqlyao7mqopRGnOlrx0XA3Qi2N3OPxJpsbiajOzi4fRuwasyvjVNSJ0AhOhwu5i5QlsTabEvMGHuhG4IFulJfUKlY0brvKlbEIDr4m/id/keF2HOl6XJss4vcHAHdxFXzbGjWxxyfT5tp6z7m4Raur9G4IPUSuOa92bgQ1+aMHe/OFw+KnvmYTmfNI6o1EEtSpRc9piybwioo93HsjnvKN6Vl5xNx2nsVmiQy367roRojP3s82cy5unkuONNxKkWuezkMOLKLkGhj3XLFC+g+EsNTVNQi8gsTx8iwzj3TGMZPwEo1I4Vmlst48N1/FXRxAbhpruiPDbWh+q1I3xhYxMhbBwdYytPc04EoaIi90pF7GeqOYc3HzXHJesoWHyC1m4+N0ECXXWPc8HG5Xnqzi3MyyHIF3dyXqnq7nHpP9vjXv7kpDXxioiqR0U5nhSdEIat6DfcUjKn3JBr44QmS9U607X+cUe2bR2Cq1M73NaH6rEs1v7U/IiqdL27l6PNtahiOdNYgMtyXUt/WIzqH1Nu13qM13JpNe7rS/YFDEZHJOsfBmCgcIc0HiJgiLMuduOUEQNwYSN0FYFBI3QVgUEjdBWBQSN0FYFBI3QVgUEjdBWBQSN0FYFBI3QVgUEjdBWBQSN0FYFBI3QVgUEjdBWBQSN0FYFBI3QVgUEjdBWBQSN0FYFBI3QVgUEjdBWJT/B5R4DuMltbZlAAAAAElFTkSuQmCC" alt="AkashX">
+      <div>
+        <p class="eyebrow">MULTI-CLOUD OPERATIONS</p>
+        <h1 class="display">Cloud Fleet &amp; Spend</h1>
+      </div>
+    </div>
+    <div class="total-figure">
+      <div class="amount mono" id="totalAmount">$30,899.01</div>
+      <div class="label">COMBINED SPEND · <span id="periodLabel">2026-06-27 → 2026-07-27</span></div>
+    </div>
+  </header>
+
+  <div id="spendMeterWrap">
+    <div class="spend-meter" id="spendMeter"><div class="segment" style="width: 27.4139%; background: rgb(240, 162, 2);"></div><div class="segment" style="width: 72.5861%; background: rgb(76, 141, 255);"></div></div>
+    <div class="spend-meter-legend" id="spendMeterLegend"><span><span class="dot" style="background:#F0A202"></span>AWS: $8,470.62 (27.4%)</span><span><span class="dot" style="background:#4C8DFF"></span>Azure: $22,428.39 (72.6%)</span></div>
+  </div>
+
+  <div class="tab-bar" style="margin-top:32px;">
+    <button class="tab-btn active" data-tab="cost">Cost</button>
+    <button class="tab-btn" data-tab="infra">Infrastructure</button>
+    <button class="tab-btn" data-tab="resource">Resource Cost</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-cost">
+    <div class="overview-strip" id="overviewStrip"><div class="overview-card grand"><div class="oc-label">Overall cost (all clouds)</div><div class="oc-amount">$30,899.01</div></div><div class="overview-card"><div class="oc-label"><span class="dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#F0A202"></span>AWS (period)</div><div class="oc-amount">$8,470.62</div></div><div class="overview-card"><div class="oc-label"><span class="dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#4C8DFF"></span>Azure (period)</div><div class="oc-amount">$22,428.39</div></div><div class="overview-card"><div class="oc-label"><span class="dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#34D399"></span>GCP (period)</div><div class="oc-amount">$0.00</div></div></div>
+
+    <div class="daily-cost-wrap">
+      <div class="section-label" style="margin-top:0">Daily spend (all clouds)</div>
+      <div class="daily-cost-scroll">
+        <table class="daily-cost">
+          <thead><tr id="dailyCostHead"><th>Date</th><th>AWS</th><th>Azure</th><th>GCP</th><th>Total</th></tr></thead>
+          <tbody id="dailyCostBody"><tr><td>2026-07-27</td><td style="color:var(--muted)">—</td><td>$90.74</td><td style="color:var(--muted)">—</td><td class="total-cell">$90.74</td></tr><tr><td>2026-07-26</td><td>$195.67</td><td>$641.92</td><td style="color:var(--muted)">—</td><td class="total-cell">$837.59</td></tr><tr><td>2026-07-25</td><td>$198.43</td><td>$685.68</td><td style="color:var(--muted)">—</td><td class="total-cell">$884.11</td></tr><tr><td>2026-07-24</td><td>$245.26</td><td>$765.37</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,010.63</td></tr><tr><td>2026-07-23</td><td>$248.08</td><td>$690.87</td><td style="color:var(--muted)">—</td><td class="total-cell">$938.95</td></tr><tr><td>2026-07-22</td><td>$324.28</td><td>$692.46</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,016.74</td></tr><tr><td>2026-07-21</td><td>$324.77</td><td>$832.30</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,157.07</td></tr><tr><td>2026-07-20</td><td>$355.32</td><td>$723.97</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,079.29</td></tr><tr><td>2026-07-19</td><td>$520.35</td><td>$555.24</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,075.59</td></tr><tr><td>2026-07-18</td><td>$377.01</td><td>$577.17</td><td style="color:var(--muted)">—</td><td class="total-cell">$954.18</td></tr><tr><td>2026-07-17</td><td>$392.27</td><td>$834.34</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,226.61</td></tr><tr><td>2026-07-16</td><td>$263.30</td><td>$904.14</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,167.44</td></tr><tr><td>2026-07-15</td><td>$239.50</td><td>$834.79</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,074.29</td></tr><tr><td>2026-07-14</td><td>$384.25</td><td>$772.23</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,156.48</td></tr><tr><td>2026-07-13</td><td>$287.05</td><td>$749.45</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,036.50</td></tr><tr><td>2026-07-12</td><td>$376.68</td><td>$668.03</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,044.71</td></tr><tr><td>2026-07-11</td><td>$249.98</td><td>$535.56</td><td style="color:var(--muted)">—</td><td class="total-cell">$785.54</td></tr><tr><td>2026-07-10</td><td>$517.55</td><td>$799.15</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,316.70</td></tr><tr><td>2026-07-09</td><td>$445.91</td><td>$891.91</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,337.82</td></tr><tr><td>2026-07-08</td><td>$262.38</td><td>$790.50</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,052.88</td></tr><tr><td>2026-07-07</td><td>$265.82</td><td>$845.20</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,111.02</td></tr><tr><td>2026-07-06</td><td>$253.38</td><td>$813.47</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,066.85</td></tr><tr><td>2026-07-05</td><td>$195.48</td><td>$698.86</td><td style="color:var(--muted)">—</td><td class="total-cell">$894.34</td></tr><tr><td>2026-07-04</td><td>$148.27</td><td>$735.62</td><td style="color:var(--muted)">—</td><td class="total-cell">$883.89</td></tr><tr><td>2026-07-03</td><td>$204.76</td><td>$773.52</td><td style="color:var(--muted)">—</td><td class="total-cell">$978.28</td></tr><tr><td>2026-07-02</td><td>$257.12</td><td>$841.05</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,098.17</td></tr><tr><td>2026-07-01</td><td>$230.12</td><td>$915.00</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,145.12</td></tr><tr><td>2026-06-30</td><td>$229.73</td><td>$854.69</td><td style="color:var(--muted)">—</td><td class="total-cell">$1,084.42</td></tr><tr><td>2026-06-29</td><td>$189.28</td><td>$776.38</td><td style="color:var(--muted)">—</td><td class="total-cell">$965.66</td></tr><tr><td>2026-06-28</td><td>$138.87</td><td>$565.54</td><td style="color:var(--muted)">—</td><td class="total-cell">$704.41</td></tr><tr><td>2026-06-27</td><td>$149.73</td><td>$573.23</td><td style="color:var(--muted)">—</td><td class="total-cell">$722.96</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="suggestions-wrap">
+      <div class="section-label" style="margin-top:0">Suggestions to reduce cost</div>
+      <div id="suggestionsList"><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: evaluate Reserved Instances or a Savings Plan on AWS</b> -- <b>Amazon Elastic Compute Cloud - Compute</b> alone accounts for 54% of that cloud's spend ($4,595.77). If usage is steady, committing to a discount plan could meaningfully cut this.</div></div><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: evaluate Reserved VM Instances or an Azure Savings Plan on Azure</b> -- <b>Virtual Machines</b> alone accounts for 60% of that cloud's spend ($13,367.99). If usage is steady, committing to a discount plan could meaningfully cut this.</div></div><div class="suggestion-row"><span class="sug-badge sug-info">info</span><div class="sug-text">Only 4% of instances have per-resource cost data. Enabling it (see README) would let these suggestions point at specific expensive resources instead of just services.</div></div><div class="suggestion-row"><span class="sug-badge sug-high">high</span><div class="sug-text"><b>Action: review these highest-cost resources first</b>:<br>vm-duplomaster (Azure, akashx-duplo) — $155.30/mo est.<br>svc-portal (Azure, akashx-duplo) — $79.52/mo est.</div></div><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: add an Owner tag to these resources</b> -- 16 of 50 instances (32%) have none, making them the ones most likely to be forgotten and left running:<br>vm-duplomaster (Azure, akashx-duplo) — $155.30/mo est.<br>svc-portal (Azure, akashx-duplo) — $79.52/mo est.<br>github-actions-runner-template-x86 (AWS, prod)<br>akashxdb-hive (AWS, prod)<br>akakashxhivedb (Azure, akashx-dev)</div></div><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: migrate these 1 instance(s) to a newer generation</b> (older families are almost always cheaper-and-faster to replace in the same size class):<br>akashxdb-hive (AWS, prod)</div></div><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: confirm these 1 large instance(s) actually need that size</b> -- sitting in accounts/names that look like dev/test/staging:<br>cog-sql-dev (AWS, prod)</div></div><div class="suggestion-row"><span class="sug-badge sug-medium">medium</span><div class="sug-text"><b>Action: run a cleanup pass on these stopped instances</b> -- 42 of 50 (84%) are currently stopped/deallocated, and attached disks/IPs/snapshots often keep billing regardless:<br>serverless-peter-sounak-changes-ami (AWS, prod)<br>cog-sql-dev (AWS, prod)<br>github-actions-runner-template-x86 (AWS, prod)<br>Cng-build-system (AWS, prod)<br>akashxdb-hive (AWS, prod)<br>svc-portal (Azure, akashx-duplo)<br>akakashxhivedb (Azure, akashx-dev)<br>cog-sql-dev (Azure, akashx-dev)</div></div><div class="suggestion-row"><span class="sug-badge sug-info">info</span><div class="sug-text">On <b>Azure</b>, account <b>akashx-dev</b> accounts for 67% of that cloud's total spend ($15,024.90 of $22,428.39) across 2 accounts -- the natural place to focus a closer cost review first.</div></div></div>
+    </div>
+
+    <div class="clouds-grid" id="costGrid"><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#F0A202"></span>AWS</div>
+      <div class="cloud-total">$8,470.62</div>
+    </div>
+    <div class="stat-row">
+      <div><b>1</b> account(s)</div>
+      <div><b>5</b> instances</div>
+    </div>
+  <div class="section-label">Spend by service</div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Elastic Compute Cloud - Compute">Amazon Elastic Compute Cloud - Compute</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:100%;background:#F0A202"></div></div>
+          <div class="amt">$4,595.77</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="EC2 - Other">EC2 - Other</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:34.91058081670754%;background:#F0A202"></div></div>
+          <div class="amt">$1,604.41</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Elastic Load Balancing">Amazon Elastic Load Balancing</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:19.22463482724331%;background:#F0A202"></div></div>
+          <div class="amt">$883.52</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Simple Storage Service">Amazon Simple Storage Service</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:9.898014913714132%;background:#F0A202"></div></div>
+          <div class="amt">$454.89</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Virtual Private Cloud">Amazon Virtual Private Cloud</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:6.882198195296979%;background:#F0A202"></div></div>
+          <div class="amt">$316.29</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon EC2 Container Registry (ECR)">Amazon EC2 Container Registry (ECR)</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:3.610929180529051%;background:#F0A202"></div></div>
+          <div class="amt">$165.95</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon ElastiCache">Amazon ElastiCache</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:3.1959823925044115%;background:#F0A202"></div></div>
+          <div class="amt">$146.88</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Relational Database Service">Amazon Relational Database Service</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:2.772549540120589%;background:#F0A202"></div></div>
+          <div class="amt">$127.42</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Amazon Elastic Container Service for Kubernetes">Amazon Elastic Container Service for Kubernetes</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:1.5666580355413782%;background:#F0A202"></div></div>
+          <div class="amt">$72.00</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="AWS Key Management Service">AWS Key Management Service</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:1.0740311199211448%;background:#F0A202"></div></div>
+          <div class="amt">$49.36</div>
+        </div></div><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#4C8DFF"></span>Azure</div>
+      <div class="cloud-total">$22,428.39</div>
+    </div>
+    <div class="stat-row">
+      <div><b>2</b> account(s)</div>
+      <div><b>44</b> instances</div>
+    </div>
+  <div class="section-label">By account</div>
+          <div class="account-row">
+            <div class="acct-name">akashx-dev</div>
+            <div class="acct-count">41 inst.</div>
+            <div class="acct-cost">$15,024.90</div>
+          </div>
+          <div class="account-row">
+            <div class="acct-name">akashx-duplo</div>
+            <div class="acct-count">3 inst.</div>
+            <div class="acct-cost">$7,403.49</div>
+          </div><div class="section-label">Spend by service</div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Virtual Machines">Virtual Machines</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:100%;background:#4C8DFF"></div></div>
+          <div class="amt">$13,367.99</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Storage">Storage</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:39.414003152306364%;background:#4C8DFF"></div></div>
+          <div class="amt">$5,268.86</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Virtual Machine Licenses">Virtual Machine Licenses</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:5.339546184579731%;background:#4C8DFF"></div></div>
+          <div class="amt">$713.79</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Log Analytics">Log Analytics</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:4.638917294222991%;background:#4C8DFF"></div></div>
+          <div class="amt">$620.13</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Application Gateway">Application Gateway</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:4.401559247126906%;background:#4C8DFF"></div></div>
+          <div class="amt">$588.40</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Azure Bastion">Azure Bastion</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:2.6057021287418674%;background:#4C8DFF"></div></div>
+          <div class="amt">$348.33</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Virtual Network">Virtual Network</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:2.1959920676182434%;background:#4C8DFF"></div></div>
+          <div class="amt">$293.56</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="NAT Gateway">NAT Gateway</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:1.8702886522207154%;background:#4C8DFF"></div></div>
+          <div class="amt">$250.02</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Load Balancer">Load Balancer</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:1.8677452631248228%;background:#4C8DFF"></div></div>
+          <div class="amt">$249.68</div>
+        </div>
+        <div class="cost-bar-row">
+          <div class="svc" title="Container Registry">Container Registry</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:1.3647526666312586%;background:#4C8DFF"></div></div>
+          <div class="amt">$182.44</div>
+        </div></div><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#34D399"></span>GCP</div>
+      <div class="cloud-total">$0.00</div>
+    </div>
+    <div class="stat-row">
+      <div><b>1</b> account(s)</div>
+      <div><b>1</b> instances</div>
+    </div>
+  <div class="section-label">Spend by service</div><div class="empty-note">No cost data (billing export not enabled, or provider disabled).</div></div></div>
+  </div>
+
+  <div class="tab-panel" id="tab-infra">
+    <div class="clouds-stack" id="infraGrid"><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#F0A202"></span>AWS</div>
+      <div class="cloud-total">5 instances</div>
+    </div>
+    <div class="stat-row">
+      <div><b>0</b> running</div>
+      <div><b>5</b> stopped/other</div>
+      <div><b>1</b> account(s)</div>
+    </div>
+  <div class="section-label">Instances</div>
+      <div class="filter-bar">
+        <input type="text" id="infra_aws_search" placeholder="Filter by name, owner, account, IP...">
+        <select id="infra_aws_state">
+          <option value="">All states</option>
+          <option value="stopped">stopped</option>
+        </select>
+      </div>
+    <div class="scroll-table"><table class="instances" id="infra_aws_table"><thead><tr>
+        <th>Name</th><th>Owner</th><th>Account</th><th>Type</th><th>Location</th>
+        <th>Internal IP</th><th>External IP</th><th>State</th><th>Since</th><th>Duration</th><th>Action</th>
+      </tr></thead><tbody><tr data-state="stopped" data-search="serverless-peter-sounak-changes-ami peter prod 10.0.3.219 r7gd.xlarge us-east-1">
+          <td>serverless-peter-sounak-changes-ami</td>
+          <td>peter</td>
+          <td>prod</td>
+          <td>r7gd.xlarge</td>
+          <td>us-east-1</td>
+          <td class="ip-cell">10.0.3.219</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">stopped</span></td>
+          <td>2025-10-27 13:58 UTC</td>
+          <td>272d 21h</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="aws ec2 start-instances --instance-ids i-04d7dadbc1375ea44 --region us-east-1">▶ start</button></td>
+        </tr><tr data-state="stopped" data-search="cog-sql-dev sourabh prod 172.31.35.34 23.20.71.54 g4ad.4xlarge us-east-1">
+          <td>cog-sql-dev</td>
+          <td>sourabh</td>
+          <td>prod</td>
+          <td>g4ad.4xlarge</td>
+          <td>us-east-1</td>
+          <td class="ip-cell">172.31.35.34</td>
+          <td class="ip-cell">23.20.71.54</td>
+          <td><span class="state-pill state-stopped">stopped</span></td>
+          <td>2026-06-26 05:32 UTC</td>
+          <td>31d 5h</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="aws ec2 start-instances --instance-ids i-074634a0e2c82c3b5 --region us-east-1">▶ start</button></td>
+        </tr><tr data-state="stopped" data-search="github-actions-runner-template-x86 prod 172.31.41.136 m6i.8xlarge us-east-1">
+          <td>github-actions-runner-template-x86</td>
+          <td>—</td>
+          <td>prod</td>
+          <td>m6i.8xlarge</td>
+          <td>us-east-1</td>
+          <td class="ip-cell">172.31.41.136</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">stopped</span></td>
+          <td>2026-03-06 07:39 UTC</td>
+          <td>143d 3h</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="aws ec2 start-instances --instance-ids i-0041a1dab7f5e150b --region us-east-1">▶ start</button></td>
+        </tr><tr data-state="stopped" data-search="cng-build-system sounak prod 172.31.36.201 m6a.8xlarge us-east-1">
+          <td>Cng-build-system</td>
+          <td>sounak</td>
+          <td>prod</td>
+          <td>m6a.8xlarge</td>
+          <td>us-east-1</td>
+          <td class="ip-cell">172.31.36.201</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">stopped</span></td>
+          <td>2026-05-04 11:09 UTC</td>
+          <td>83d 23h</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="aws ec2 start-instances --instance-ids i-0215e9cd6e0e99e4d --region us-east-1">▶ start</button></td>
+        </tr><tr data-state="stopped" data-search="akashxdb-hive prod 172.31.32.88 t2.xlarge us-east-1">
+          <td>akashxdb-hive</td>
+          <td>—</td>
+          <td>prod</td>
+          <td>t2.xlarge</td>
+          <td>us-east-1</td>
+          <td class="ip-cell">172.31.32.88</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">stopped</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="aws ec2 start-instances --instance-ids i-0c9c50bc217a38937 --region us-east-1">▶ start</button></td>
+        </tr></tbody></table></div><div class="no-rows-note" id="infra_aws_empty" style="display:none">No instances match this filter.</div></div><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#4C8DFF"></span>Azure</div>
+      <div class="cloud-total">44 instances</div>
+    </div>
+    <div class="stat-row">
+      <div><b>7</b> running</div>
+      <div><b>37</b> stopped/other</div>
+      <div><b>2</b> account(s)</div>
+    </div>
+  <div class="section-label">Instances</div>
+      <div class="filter-bar">
+        <input type="text" id="infra_azure_search" placeholder="Filter by name, owner, account, IP...">
+        <select id="infra_azure_state">
+          <option value="">All states</option>
+          <option value="deallocated">deallocated</option><option value="running">running</option>
+        </select>
+      </div>
+    <div class="scroll-table"><table class="instances" id="infra_azure_table"><thead><tr>
+        <th>Name</th><th>Owner</th><th>Account</th><th>Type</th><th>Location</th>
+        <th>Internal IP</th><th>External IP</th><th>State</th><th>Since</th><th>Duration</th><th>Action</th>
+      </tr></thead><tbody><tr data-state="running" data-search="svc-portal akashx-duplo 10.0.1.4 standard_d2s_v3 centralus">
+          <td>svc-portal</td>
+          <td>—</td>
+          <td>akashx-duplo</td>
+          <td>Standard_D2s_v3</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.0.1.4</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLO-MASTER/providers/Microsoft.Compute/virtualMachines/svc-portal&quot;">■ stop</button></td>
+        </tr><tr data-state="running" data-search="vm-duplomaster akashx-duplo 10.0.1.5 172.173.64.147 standard_d2s_v3 centralus">
+          <td>vm-duplomaster</td>
+          <td>—</td>
+          <td>akashx-duplo</td>
+          <td>Standard_D2s_v3</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.0.1.5</td>
+          <td class="ip-cell">172.173.64.147</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLO-MASTER/providers/Microsoft.Compute/virtualMachines/vm-duplomaster&quot;">■ stop</button></td>
+        </tr><tr data-state="deallocated" data-search="svc-portal duplo akashx-duplo 10.2.0.5 standard_d2s_v3 centralus">
+          <td>svc-portal</td>
+          <td>duplo</td>
+          <td>akashx-duplo</td>
+          <td>Standard_D2s_v3</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.2.0.5</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLOSERVICES-DEV/providers/Microsoft.Compute/virtualMachines/svc-portal&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akakashxhivedb akashx-dev 10.1.0.4 20.83.25.251 standard_e4s_v4 centralus">
+          <td>akakashxhivedb</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_E4s_v4</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.1.0.4</td>
+          <td class="ip-cell">20.83.25.251</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKAKASHXHIVEDB_GROUP/providers/Microsoft.Compute/virtualMachines/akakashxhivedb&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="cog-sql-dev sourabh akashx-dev 10.1.0.5 172.212.228.34 standard_d16as_v5 centralus">
+          <td>cog-sql-dev</td>
+          <td>sourabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16as_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.1.0.5</td>
+          <td class="ip-cell">172.212.228.34</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKAKASHXHIVEDB_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akakashxhive akashx-dev 10.0.0.4 48.214.145.45 standard_d2s_v3 centralus">
+          <td>akakashxhive</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D2s_v3</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.0.0.4</td>
+          <td class="ip-cell">48.214.145.45</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-HIVE/providers/Microsoft.Compute/virtualMachines/akakashxhive&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akashxdbhive2 akashx-dev 10.2.0.4 20.40.248.181 standard_e4s_v4 centralus">
+          <td>akashxdbhive2</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_E4s_v4</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.2.0.4</td>
+          <td class="ip-cell">20.40.248.181</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/DELTALAKE/providers/Microsoft.Compute/virtualMachines/akashxdbhive2&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="anirudh-cog-sql-dev anirudh akashx-dev 10.3.0.8 20.15.200.27 standard_d16ads_v5 centralus">
+          <td>Anirudh-cog-sql-dev</td>
+          <td>anirudh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ads_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.8</td>
+          <td class="ip-cell">20.15.200.27</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/Anirudh-cog-sql-dev&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="balaji-testing balaji akashx-dev 10.3.0.4 20.84.145.79 standard_d2s_v3 centralus">
+          <td>balaji-testing</td>
+          <td>balaji</td>
+          <td>akashx-dev</td>
+          <td>Standard_D2s_v3</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.4</td>
+          <td class="ip-cell">20.84.145.79</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/balaji-testing&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="build-system sahaj akashx-dev 10.3.0.11 52.180.144.18 standard_d8s_v5 centralus">
+          <td>build-system</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8s_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.11</td>
+          <td class="ip-cell">52.180.144.18</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/build-system&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="clientportal-dev vishal akashx-dev 10.3.0.9 13.86.104.104 standard_ds1_v2 centralus">
+          <td>clientportal-dev</td>
+          <td>vishal</td>
+          <td>akashx-dev</td>
+          <td>Standard_DS1_v2</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.9</td>
+          <td class="ip-cell">13.86.104.104</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/clientportal-dev&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="cog-sql-dev-node-2 sourabh akashx-dev 10.3.0.12 20.29.49.207 standard_d16lds_v5 centralus">
+          <td>cog-sql-dev-node-2</td>
+          <td>sourabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16lds_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.12</td>
+          <td class="ip-cell">20.29.49.207</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev-node-2&quot;">▶ start</button></td>
+        </tr><tr data-state="running" data-search="cog-sql-dev-sharepoint shabu akashx-dev 10.3.0.10 52.180.136.92 standard_d8as_v5 centralus">
+          <td>cog-sql-dev-sharepoint</td>
+          <td>shabu</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8as_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.10</td>
+          <td class="ip-cell">52.180.136.92</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev-sharepoint&quot;">■ stop</button></td>
+        </tr><tr data-state="deallocated" data-search="palasha-testing palash akashx-dev 10.3.0.14 20.80.84.242 standard_b16as_v2 centralus">
+          <td>palasha-testing</td>
+          <td>palash</td>
+          <td>akashx-dev</td>
+          <td>Standard_B16as_v2</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.14</td>
+          <td class="ip-cell">20.80.84.242</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/palasha-testing&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="peter-testing-vm peter akashx-dev 10.3.0.13 132.196.70.181 standard_d8ds_v6 centralus">
+          <td>peter-testing-vm</td>
+          <td>peter</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8ds_v6</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.13</td>
+          <td class="ip-cell">132.196.70.181</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/peter-testing-vm&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="testing-instance-for-new-joiners-gnana gnana akashx-dev 10.3.0.6 20.118.200.203 standard_b16as_v2 centralus">
+          <td>testing-instance-for-new-joiners-gnana</td>
+          <td>Gnana</td>
+          <td>akashx-dev</td>
+          <td>Standard_B16as_v2</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.6</td>
+          <td class="ip-cell">20.118.200.203</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/testing-instance-for-new-joiners-gnana&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="testing-instance-for-new-joiners-jayesh jayesh akashx-dev 10.3.0.7 20.118.208.74 standard_d16ads_v5 centralus">
+          <td>testing-instance-for-new-joiners-Jayesh</td>
+          <td>jayesh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ads_v5</td>
+          <td>centralus</td>
+          <td class="ip-cell">10.3.0.7</td>
+          <td class="ip-cell">20.118.208.74</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/testing-instance-for-new-joiners-Jayesh&quot;">▶ start</button></td>
+        </tr><tr data-state="running" data-search="akashx-vpn-server akashx-dev 10.0.0.4 20.2.221.48 standard_d2as_v5 eastasia">
+          <td>AkashX-VPN-Server</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D2as_v5</td>
+          <td>eastasia</td>
+          <td class="ip-cell">10.0.0.4</td>
+          <td class="ip-cell">20.2.221.48</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/AkashX-VPN-Server&quot;">■ stop</button></td>
+        </tr><tr data-state="deallocated" data-search="akashx-tvs-akashxdb-vm akashx-dev 10.24.50.4 135.235.138.62 standard_d8s_v6 centralindia">
+          <td>akashx-tvs-akashxdb-vm</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8s_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.4</td>
+          <td class="ip-cell">135.235.138.62</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akashx-tvs-akashxdb-vm-16-core akashx-dev 10.24.50.5 20.193.249.105 standard_d16ds_v6 centralindia">
+          <td>akashx-tvs-akashxdb-vm-16-core</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.5</td>
+          <td class="ip-cell">20.193.249.105</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akashx-tvs-akashxdb-vm-16-core-v1 akashx-dev 10.24.50.7 20.40.61.147 standard_d16ds_v6 centralindia">
+          <td>akashx-tvs-akashxdb-vm-16-core-v1</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.7</td>
+          <td class="ip-cell">20.40.61.147</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core-v1&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akashx-tvs-akashxdb-vm-16-core-v2 akashx-dev 10.24.50.9 20.204.167.208 standard_d16ds_v6 centralindia">
+          <td>akashx-tvs-akashxdb-vm-16-core-v2</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.9</td>
+          <td class="ip-cell">20.204.167.208</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core-v2&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="akashx-tvs-private-vm akashx-dev 10.24.50.133 98.70.38.105 standard_d4s_v3 centralindia">
+          <td>akashx-tvs-private-vm</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D4s_v3</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.133</td>
+          <td class="ip-cell">98.70.38.105</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-private-vm&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-16-akashxdb akashx-dev 10.24.50.6 20.40.60.106 standard_d16ds_v6 centralindia">
+          <td>camline-poc-16-akashxdb</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.6</td>
+          <td class="ip-cell">20.40.60.106</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/camline-poc-16-akashxdb&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-vm-unity platform-team akashx-dev 10.24.50.8 4.224.120.125 standard_d4as_v5 centralindia">
+          <td>camline-vm-unity</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D4as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.24.50.8</td>
+          <td class="ip-cell">4.224.120.125</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/camline-vm-unity&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="application-build-instance akashx-dev 10.60.1.21 standard_d96als_v6 centralindia">
+          <td>application-build-instance</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D96als_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.21</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/application-build-instance&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="application-build-instance-arm akashx-dev 10.60.1.22 standard_d96pls_v6 centralindia">
+          <td>application-build-instance-arm</td>
+          <td>—</td>
+          <td>akashx-dev</td>
+          <td>Standard_D96pls_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.22</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/application-build-instance-arm&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="build-test rakesh@akashx.ai akashx-dev 10.60.1.18 standard_d128ds_v6 centralindia">
+          <td>build-test</td>
+          <td>rakesh@akashx.ai</td>
+          <td>akashx-dev</td>
+          <td>Standard_D128ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.18</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/build-test&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-akashxdb-cn platform-team akashx-dev 10.60.1.5 standard_d4s_v3 centralindia">
+          <td>camline-poc-cin-vm-akashxdb-cn</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D4s_v3</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.5</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-akashxdb-cn&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-akashxdb-fe platform-team akashx-dev 10.60.1.4 standard_d8as_v5 centralindia">
+          <td>camline-poc-cin-vm-akashxdb-fe</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.4</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-akashxdb-fe&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-jupyter platform-team akashx-dev 10.60.1.14 standard_d4as_v5 centralindia">
+          <td>camline-poc-cin-vm-jupyter</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D4as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.14</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-jupyter&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-spark-master platform-team akashx-dev 10.60.1.12 standard_d16as_v5 centralindia">
+          <td>camline-poc-cin-vm-spark-master</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.12</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-spark-master&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-spark-worker platform-team akashx-dev 10.60.1.13 standard_d48as_v5 centralindia">
+          <td>camline-poc-cin-vm-spark-worker</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D48as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.13</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-spark-worker&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="camline-poc-cin-vm-unity-hive platform-team akashx-dev 10.60.1.10 standard_d4as_v5 centralindia">
+          <td>camline-poc-cin-vm-unity-hive</td>
+          <td>platform-team</td>
+          <td>akashx-dev</td>
+          <td>Standard_D4as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.10</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-unity-hive&quot;">▶ start</button></td>
+        </tr><tr data-state="running" data-search="cng-cn-1 sahaj akashx-dev 10.60.1.15 standard_b16as_v2 centralindia">
+          <td>cng-cn-1</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_B16as_v2</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.15</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-cn-1&quot;">■ stop</button></td>
+        </tr><tr data-state="running" data-search="cng-cn-2 sahaj akashx-dev 10.60.1.16 standard_b16as_v2 centralindia">
+          <td>cng-cn-2</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_B16as_v2</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.16</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-cn-2&quot;">■ stop</button></td>
+        </tr><tr data-state="deallocated" data-search="cng-fe-1 sahaj akashx-dev 10.60.1.7 standard_d8as_v5 centralindia">
+          <td>cng-fe-1</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.7</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-1&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="cng-fe-2 sahaj akashx-dev 10.60.1.8 standard_d16ads_v5 centralindia">
+          <td>cng-fe-2</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_D16ads_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.8</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-2&quot;">▶ start</button></td>
+        </tr><tr data-state="running" data-search="cng-fe-3 sahaj akashx-dev 10.60.1.9 standard_b8as_v2 centralindia">
+          <td>cng-fe-3</td>
+          <td>sahaj</td>
+          <td>akashx-dev</td>
+          <td>Standard_B8as_v2</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.9</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-running">running</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy stop command" data-cmd="az vm deallocate --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-3&quot;">■ stop</button></td>
+        </tr><tr data-state="deallocated" data-search="es3-cn-1 saurabh akashx-dev 10.60.1.31 standard_d8ds_v6 centralindia">
+          <td>es3-cn-1</td>
+          <td>saurabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.31</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-cn-1&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="es3-ext-cn-1 saurabh akashx-dev 10.60.1.37 standard_d8ds_v6 centralindia">
+          <td>es3-ext-cn-1</td>
+          <td>saurabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.37</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-ext-cn-1&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="es3-fe-1 saurabh akashx-dev 10.60.1.28 standard_d8as_v5 centralindia">
+          <td>es3-fe-1</td>
+          <td>saurabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8as_v5</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.28</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-fe-1&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="es3-nvme-of saurabh akashx-dev 10.60.1.36 standard_d8ds_v6 centralindia">
+          <td>es3-NVMe-oF</td>
+          <td>saurabh</td>
+          <td>akashx-dev</td>
+          <td>Standard_D8ds_v6</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.36</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-NVMe-oF&quot;">▶ start</button></td>
+        </tr><tr data-state="deallocated" data-search="jyotika-database jyotika@akashx.ai akashx-dev 10.60.1.17 standard_b8as_v2 centralindia">
+          <td>jyotika-database</td>
+          <td>jyotika@akashx.ai</td>
+          <td>akashx-dev</td>
+          <td>Standard_B8as_v2</td>
+          <td>centralindia</td>
+          <td class="ip-cell">10.60.1.17</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">deallocated</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="az vm start --ids &quot;/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/jyotika-database&quot;">▶ start</button></td>
+        </tr></tbody></table></div><div class="no-rows-note" id="infra_azure_empty" style="display:none">No instances match this filter.</div></div><div class="cloud-panel">
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:#34D399"></span>GCP</div>
+      <div class="cloud-total">1 instances</div>
+    </div>
+    <div class="stat-row">
+      <div><b>0</b> running</div>
+      <div><b>1</b> stopped/other</div>
+      <div><b>1</b> account(s)</div>
+    </div>
+  <div class="section-label">Instances</div>
+      <div class="filter-bar">
+        <input type="text" id="infra_gcp_search" placeholder="Filter by name, owner, account, IP...">
+        <select id="infra_gcp_state">
+          <option value="">All states</option>
+          <option value="TERMINATED">TERMINATED</option>
+        </select>
+      </div>
+    <div class="scroll-table"><table class="instances" id="infra_gcp_table"><thead><tr>
+        <th>Name</th><th>Owner</th><th>Account</th><th>Type</th><th>Location</th>
+        <th>Internal IP</th><th>External IP</th><th>State</th><th>Since</th><th>Duration</th><th>Action</th>
+      </tr></thead><tbody><tr data-state="TERMINATED" data-search="devops-testing rakesh prod-project 10.0.2.97 c3d-highcpu-180 us-central1-f">
+          <td>devops-testing</td>
+          <td>rakesh</td>
+          <td>prod-project</td>
+          <td>c3d-highcpu-180</td>
+          <td>us-central1-f</td>
+          <td class="ip-cell">10.0.2.97</td>
+          <td class="ip-cell">—</td>
+          <td><span class="state-pill state-stopped">TERMINATED</span></td>
+          <td>2026-05-13 04:09 UTC</td>
+          <td>75d 6h</td>
+          <td><button class="action-btn" title="Copy start command" data-cmd="gcloud compute instances start devops-testing --zone=us-central1-f --project=tough-cascade-402415">▶ start</button></td>
+        </tr></tbody></table></div><div class="no-rows-note" id="infra_gcp_empty" style="display:none">No instances match this filter.</div></div></div>
+  </div>
+
+  <div class="tab-panel" id="tab-resource">
+    <div class="resource-cost-wrap">
+      <div class="coverage-note" id="resourceCoverageNote">2 of 50 resources have per-resource cost data (4% coverage).</div>
+      <div class="resource-cost-scroll">
+        <table class="resource-cost">
+          <thead><tr>
+            <th>Resource</th><th>Cloud</th><th>Account</th><th>Type</th><th>Location</th><th>State</th><th style="text-align:right">Cost</th>
+          </tr></thead>
+          <tbody id="resourceCostBody"><tr>
+      <td>vm-duplomaster</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-duplo</td>
+      <td>Standard_D2s_v3</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell">$155.30</td>
+    </tr><tr>
+      <td>svc-portal</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-duplo</td>
+      <td>Standard_D2s_v3</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell">$79.52</td>
+    </tr><tr>
+      <td>serverless-peter-sounak-changes-ami</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#F0A202"></span>AWS</span></td>
+      <td>prod</td>
+      <td>r7gd.xlarge</td>
+      <td>us-east-1</td>
+      <td><span class="state-pill state-stopped">stopped</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cog-sql-dev</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#F0A202"></span>AWS</span></td>
+      <td>prod</td>
+      <td>g4ad.4xlarge</td>
+      <td>us-east-1</td>
+      <td><span class="state-pill state-stopped">stopped</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>github-actions-runner-template-x86</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#F0A202"></span>AWS</span></td>
+      <td>prod</td>
+      <td>m6i.8xlarge</td>
+      <td>us-east-1</td>
+      <td><span class="state-pill state-stopped">stopped</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>Cng-build-system</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#F0A202"></span>AWS</span></td>
+      <td>prod</td>
+      <td>m6a.8xlarge</td>
+      <td>us-east-1</td>
+      <td><span class="state-pill state-stopped">stopped</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashxdb-hive</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#F0A202"></span>AWS</span></td>
+      <td>prod</td>
+      <td>t2.xlarge</td>
+      <td>us-east-1</td>
+      <td><span class="state-pill state-stopped">stopped</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>svc-portal</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-duplo</td>
+      <td>Standard_D2s_v3</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akakashxhivedb</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_E4s_v4</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cog-sql-dev</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16as_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akakashxhive</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D2s_v3</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashxdbhive2</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_E4s_v4</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>Anirudh-cog-sql-dev</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ads_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>balaji-testing</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D2s_v3</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>build-system</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8s_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>clientportal-dev</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_DS1_v2</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cog-sql-dev-node-2</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16lds_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cog-sql-dev-sharepoint</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8as_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>palasha-testing</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B16as_v2</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>peter-testing-vm</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8ds_v6</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>testing-instance-for-new-joiners-gnana</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B16as_v2</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>testing-instance-for-new-joiners-Jayesh</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ads_v5</td>
+      <td>centralus</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>AkashX-VPN-Server</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D2as_v5</td>
+      <td>eastasia</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashx-tvs-akashxdb-vm</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8s_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashx-tvs-akashxdb-vm-16-core</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashx-tvs-akashxdb-vm-16-core-v1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashx-tvs-akashxdb-vm-16-core-v2</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>akashx-tvs-private-vm</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D4s_v3</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-16-akashxdb</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-vm-unity</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D4as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>application-build-instance</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D96als_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>application-build-instance-arm</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D96pls_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>build-test</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D128ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-akashxdb-cn</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D4s_v3</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-akashxdb-fe</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-jupyter</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D4as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-spark-master</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-spark-worker</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D48as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>camline-poc-cin-vm-unity-hive</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D4as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cng-cn-1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B16as_v2</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cng-cn-2</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B16as_v2</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cng-fe-1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cng-fe-2</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D16ads_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>cng-fe-3</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B8as_v2</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-running">running</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>es3-cn-1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>es3-ext-cn-1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>es3-fe-1</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8as_v5</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>es3-NVMe-oF</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_D8ds_v6</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>jyotika-database</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#4C8DFF"></span>Azure</span></td>
+      <td>akashx-dev</td>
+      <td>Standard_B8as_v2</td>
+      <td>centralindia</td>
+      <td><span class="state-pill state-stopped">deallocated</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr><tr>
+      <td>devops-testing</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:#34D399"></span>GCP</span></td>
+      <td>prod-project</td>
+      <td>c3d-highcpu-180</td>
+      <td>us-central1-f</td>
+      <td><span class="state-pill state-stopped">TERMINATED</span></td>
+      <td class="cost-cell no-data">—</td>
+    </tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>GENERATED LOCALLY · DATA FROM YOUR OWN CLOUD CREDENTIALS · NO EXTERNAL TRANSMISSION</footer>
+</div>
+
+<script>
+const DATA = {"aws": {"provider": "aws", "accounts": [{"account": "prod", "instances": [{"id": "i-04d7dadbc1375ea44", "name": "serverless-peter-sounak-changes-ami", "owner": "peter", "type": "r7gd.xlarge", "state": "stopped", "region": "us-east-1", "az": "us-east-1a", "external_ip": null, "internal_ip": "10.0.3.219", "launch_time": "2025-10-27T13:11:32+00:00", "state_since": "2025-10-27T13:58:04+00:00", "platform": "Linux/UNIX", "account": "prod"}, {"id": "i-074634a0e2c82c3b5", "name": "cog-sql-dev", "owner": "sourabh", "type": "g4ad.4xlarge", "state": "stopped", "region": "us-east-1", "az": "us-east-1c", "external_ip": "23.20.71.54", "internal_ip": "172.31.35.34", "launch_time": "2026-06-25T18:13:47+00:00", "state_since": "2026-06-26T05:32:49+00:00", "platform": "Linux/UNIX", "account": "prod"}, {"id": "i-0041a1dab7f5e150b", "name": "github-actions-runner-template-x86", "owner": null, "type": "m6i.8xlarge", "state": "stopped", "region": "us-east-1", "az": "us-east-1c", "external_ip": null, "internal_ip": "172.31.41.136", "launch_time": "2026-03-06T07:29:35+00:00", "state_since": "2026-03-06T07:39:31+00:00", "platform": "Linux/UNIX", "account": "prod"}, {"id": "i-0215e9cd6e0e99e4d", "name": "Cng-build-system", "owner": "sounak", "type": "m6a.8xlarge", "state": "stopped", "region": "us-east-1", "az": "us-east-1c", "external_ip": null, "internal_ip": "172.31.36.201", "launch_time": "2026-05-04T10:19:13+00:00", "state_since": "2026-05-04T11:09:58+00:00", "platform": "Linux/UNIX", "account": "prod"}, {"id": "i-0c9c50bc217a38937", "name": "akashxdb-hive", "owner": null, "type": "t2.xlarge", "state": "stopped", "region": "us-east-1", "az": "us-east-1c", "external_ip": null, "internal_ip": "172.31.32.88", "launch_time": "2026-05-20T07:13:57+00:00", "state_since": null, "platform": "Linux/UNIX", "account": "prod"}], "cost": {"period_start": "2026-06-27", "period_end": "2026-07-27", "by_service": [{"service": "Amazon Elastic Compute Cloud - Compute", "cost": 4595.77}, {"service": "EC2 - Other", "cost": 1604.41}, {"service": "Amazon Elastic Load Balancing", "cost": 883.52}, {"service": "Amazon Simple Storage Service", "cost": 454.89}, {"service": "Amazon Virtual Private Cloud", "cost": 316.29}, {"service": "Amazon EC2 Container Registry (ECR)", "cost": 165.95}, {"service": "Amazon ElastiCache", "cost": 146.88}, {"service": "Amazon Relational Database Service", "cost": 127.42}, {"service": "Amazon Elastic Container Service for Kubernetes", "cost": 72.0}, {"service": "AWS Key Management Service", "cost": 49.36}, {"service": "AmazonCloudWatch", "cost": 31.22}, {"service": "AWS Glue", "cost": 8.88}, {"service": "AWS Secrets Manager", "cost": 4.38}, {"service": "AWS Cost Explorer", "cost": 3.22}, {"service": "Amazon DynamoDB", "cost": 2.34}, {"service": "Amazon Redshift", "cost": 1.97}, {"service": "Amazon Route 53", "cost": 1.67}, {"service": "AWS Systems Manager", "cost": 0.34}, {"service": "AWS IoT", "cost": 0.1}, {"service": "Amazon Athena", "cost": 0.0}, {"service": "Amazon Simple Notification Service", "cost": 0.0}, {"service": "Amazon Simple Queue Service", "cost": 0.0}, {"service": "AWS Step Functions", "cost": 0.0}, {"service": "AWS CloudTrail", "cost": 0.0}, {"service": "AWS Certificate Manager", "cost": 0.0}, {"service": "AWS CloudFormation", "cost": 0.0}, {"service": "Tax", "cost": 0.0}], "total": 8470.62, "by_day": [{"date": "2026-06-27", "cost": 149.73}, {"date": "2026-06-28", "cost": 138.87}, {"date": "2026-06-29", "cost": 189.28}, {"date": "2026-06-30", "cost": 229.73}, {"date": "2026-07-01", "cost": 230.12}, {"date": "2026-07-02", "cost": 257.12}, {"date": "2026-07-03", "cost": 204.76}, {"date": "2026-07-04", "cost": 148.27}, {"date": "2026-07-05", "cost": 195.48}, {"date": "2026-07-06", "cost": 253.38}, {"date": "2026-07-07", "cost": 265.82}, {"date": "2026-07-08", "cost": 262.38}, {"date": "2026-07-09", "cost": 445.91}, {"date": "2026-07-10", "cost": 517.55}, {"date": "2026-07-11", "cost": 249.98}, {"date": "2026-07-12", "cost": 376.68}, {"date": "2026-07-13", "cost": 287.05}, {"date": "2026-07-14", "cost": 384.25}, {"date": "2026-07-15", "cost": 239.5}, {"date": "2026-07-16", "cost": 263.3}, {"date": "2026-07-17", "cost": 392.27}, {"date": "2026-07-18", "cost": 377.01}, {"date": "2026-07-19", "cost": 520.35}, {"date": "2026-07-20", "cost": 355.32}, {"date": "2026-07-21", "cost": 324.77}, {"date": "2026-07-22", "cost": 324.28}, {"date": "2026-07-23", "cost": 248.08}, {"date": "2026-07-24", "cost": 245.26}, {"date": "2026-07-25", "cost": 198.43}, {"date": "2026-07-26", "cost": 195.67}]}}]}, "azure": {"provider": "azure", "accounts": [{"account": "akashx-duplo", "instances": [{"id": "/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLO-MASTER/providers/Microsoft.Compute/virtualMachines/svc-portal", "vm_id": "905cba00-143f-4a3c-8f4c-a3d0aa05e0e3", "name": "svc-portal", "owner": null, "type": "Standard_D2s_v3", "state": "running", "state_since": null, "region": "centralus", "resource_group": "DUPLO-MASTER", "subscription_id": "b0edf187-e8c0-49b2-81ea-895c89d912b0", "external_ip": null, "internal_ip": "10.0.1.4", "os": "Linux", "account": "akashx-duplo", "cost": 79.52}, {"id": "/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLO-MASTER/providers/Microsoft.Compute/virtualMachines/vm-duplomaster", "vm_id": "7c5ec657-8344-4972-a046-6cd123c5fd68", "name": "vm-duplomaster", "owner": null, "type": "Standard_D2s_v3", "state": "running", "state_since": null, "region": "centralus", "resource_group": "DUPLO-MASTER", "subscription_id": "b0edf187-e8c0-49b2-81ea-895c89d912b0", "external_ip": "172.173.64.147", "internal_ip": "10.0.1.5", "os": "Windows", "account": "akashx-duplo", "cost": 155.3}, {"id": "/subscriptions/b0edf187-e8c0-49b2-81ea-895c89d912b0/resourceGroups/DUPLOSERVICES-DEV/providers/Microsoft.Compute/virtualMachines/svc-portal", "vm_id": "6b0fb011-4fae-423d-989f-ddda5479c3f2", "name": "svc-portal", "owner": "duplo", "type": "Standard_D2s_v3", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "DUPLOSERVICES-DEV", "subscription_id": "b0edf187-e8c0-49b2-81ea-895c89d912b0", "external_ip": null, "internal_ip": "10.2.0.5", "os": "Linux", "account": "akashx-duplo"}], "cost": {"period_start": "2026-06-27", "period_end": "2026-07-27", "by_service": [{"service": "Virtual Machines", "cost": 5658.45}, {"service": "Storage", "cost": 732.7}, {"service": "Application Gateway", "cost": 327.68}, {"service": "Foundry Models", "cost": 164.55}, {"service": "Load Balancer", "cost": 157.44}, {"service": "Container Registry", "cost": 117.09}, {"service": "Azure Kubernetes Service", "cost": 72.42}, {"service": "Azure Database for PostgreSQL", "cost": 59.62}, {"service": "Virtual Network", "cost": 53.89}, {"service": "NAT Gateway", "cost": 32.62}, {"service": "Redis Cache", "cost": 15.93}, {"service": "Azure DNS", "cost": 6.41}, {"service": "Bandwidth", "cost": 4.27}, {"service": "Key Vault", "cost": 0.42}, {"service": "Container Instances", "cost": 0.0}], "total": 7403.49, "by_day": [{"date": "2026-06-27", "cost": 154.91}, {"date": "2026-06-28", "cost": 154.19}, {"date": "2026-06-29", "cost": 310.7}, {"date": "2026-06-30", "cost": 172.46}, {"date": "2026-07-01", "cost": 181.55}, {"date": "2026-07-02", "cost": 185.78}, {"date": "2026-07-03", "cost": 176.25}, {"date": "2026-07-04", "cost": 154.73}, {"date": "2026-07-05", "cost": 172.01}, {"date": "2026-07-06", "cost": 193.52}, {"date": "2026-07-07", "cost": 222.64}, {"date": "2026-07-08", "cost": 156.32}, {"date": "2026-07-09", "cost": 200.39}, {"date": "2026-07-10", "cost": 197.66}, {"date": "2026-07-11", "cost": 166.46}, {"date": "2026-07-12", "cost": 157.15}, {"date": "2026-07-13", "cost": 186.7}, {"date": "2026-07-14", "cost": 182.58}, {"date": "2026-07-15", "cost": 275.98}, {"date": "2026-07-16", "cost": 331.23}, {"date": "2026-07-17", "cost": 335.35}, {"date": "2026-07-18", "cost": 317.44}, {"date": "2026-07-19", "cost": 316.44}, {"date": "2026-07-20", "cost": 328.18}, {"date": "2026-07-21", "cost": 337.13}, {"date": "2026-07-22", "cost": 347.37}, {"date": "2026-07-23", "cost": 368.41}, {"date": "2026-07-24", "cost": 375.59}, {"date": "2026-07-25", "cost": 358.61}, {"date": "2026-07-26", "cost": 339.82}, {"date": "2026-07-27", "cost": 45.94}]}}, {"account": "akashx-dev", "instances": [{"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKAKASHXHIVEDB_GROUP/providers/Microsoft.Compute/virtualMachines/akakashxhivedb", "vm_id": "b1692cca-d8b1-4bff-8767-b7df9878d320", "name": "akakashxhivedb", "owner": null, "type": "Standard_E4s_v4", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "AKAKASHXHIVEDB_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.83.25.251", "internal_ip": "10.1.0.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKAKASHXHIVEDB_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev", "vm_id": "8d1fd16d-1d31-4587-9142-6f25a45567a5", "name": "cog-sql-dev", "owner": "sourabh", "type": "Standard_D16as_v5", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "AKAKASHXHIVEDB_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "172.212.228.34", "internal_ip": "10.1.0.5", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-HIVE/providers/Microsoft.Compute/virtualMachines/akakashxhive", "vm_id": "0697c6f5-4b8c-4943-ae98-63b025a70936", "name": "akakashxhive", "owner": null, "type": "Standard_D2s_v3", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "AKASHX-HIVE", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "48.214.145.45", "internal_ip": "10.0.0.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/DELTALAKE/providers/Microsoft.Compute/virtualMachines/akashxdbhive2", "vm_id": "cc722a29-7a7d-4ca2-82de-eb0832ba611a", "name": "akashxdbhive2", "owner": null, "type": "Standard_E4s_v4", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "DELTALAKE", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.40.248.181", "internal_ip": "10.2.0.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/Anirudh-cog-sql-dev", "vm_id": "8537e00d-e358-49dc-93ae-a7c8ec8cac42", "name": "Anirudh-cog-sql-dev", "owner": "anirudh", "type": "Standard_D16ads_v5", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.15.200.27", "internal_ip": "10.3.0.8", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/balaji-testing", "vm_id": "ef041f59-8917-4b9f-9bf3-41ae37253e94", "name": "balaji-testing", "owner": "balaji", "type": "Standard_D2s_v3", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.84.145.79", "internal_ip": "10.3.0.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/build-system", "vm_id": "576c6f42-6b6a-41e2-a9a3-847fdf00848a", "name": "build-system", "owner": "sahaj", "type": "Standard_D8s_v5", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "52.180.144.18", "internal_ip": "10.3.0.11", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/clientportal-dev", "vm_id": "a57ed4ba-d0cd-432e-8973-dcb420dbdfc5", "name": "clientportal-dev", "owner": "vishal", "type": "Standard_DS1_v2", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "13.86.104.104", "internal_ip": "10.3.0.9", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev-node-2", "vm_id": "1da6b1cc-4168-4af0-99e0-2361e240fe31", "name": "cog-sql-dev-node-2", "owner": "sourabh", "type": "Standard_D16lds_v5", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.29.49.207", "internal_ip": "10.3.0.12", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/cog-sql-dev-sharepoint", "vm_id": "c0512510-0bbc-4dc0-9d7d-7556496e78ea", "name": "cog-sql-dev-sharepoint", "owner": "shabu", "type": "Standard_D8as_v5", "state": "running", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "52.180.136.92", "internal_ip": "10.3.0.10", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/palasha-testing", "vm_id": "d093fb22-b8c6-410b-aa70-f387c2b74b59", "name": "palasha-testing", "owner": "palash", "type": "Standard_B16as_v2", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.80.84.242", "internal_ip": "10.3.0.14", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/peter-testing-vm", "vm_id": "fff35db0-2e78-405e-9267-bdca289fbebd", "name": "peter-testing-vm", "owner": "peter", "type": "Standard_D8ds_v6", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "132.196.70.181", "internal_ip": "10.3.0.13", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/testing-instance-for-new-joiners-gnana", "vm_id": "d6d74593-5179-4419-9bef-93bb3b985325", "name": "testing-instance-for-new-joiners-gnana", "owner": "Gnana", "type": "Standard_B16as_v2", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.118.200.203", "internal_ip": "10.3.0.6", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/VMTEST_GROUP/providers/Microsoft.Compute/virtualMachines/testing-instance-for-new-joiners-Jayesh", "vm_id": "3d83ba5e-d578-4d5e-9269-c3a15ac34735", "name": "testing-instance-for-new-joiners-Jayesh", "owner": "jayesh", "type": "Standard_D16ads_v5", "state": "deallocated", "state_since": null, "region": "centralus", "resource_group": "VMTEST_GROUP", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.118.208.74", "internal_ip": "10.3.0.7", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/AkashX-VPN-Server", "vm_id": "022f0162-23df-4400-a816-3d6bc763b7c3", "name": "AkashX-VPN-Server", "owner": null, "type": "Standard_D2as_v5", "state": "running", "state_since": null, "region": "eastasia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.2.221.48", "internal_ip": "10.0.0.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm", "vm_id": "2dece85e-a949-47a1-b2f7-d17a62d238cf", "name": "akashx-tvs-akashxdb-vm", "owner": null, "type": "Standard_D8s_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "135.235.138.62", "internal_ip": "10.24.50.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core", "vm_id": "7bf2d021-3df1-4ed3-a35f-31675499083c", "name": "akashx-tvs-akashxdb-vm-16-core", "owner": null, "type": "Standard_D16ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.193.249.105", "internal_ip": "10.24.50.5", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core-v1", "vm_id": "37087606-1936-4a88-a6f3-d04e20dcb826", "name": "akashx-tvs-akashxdb-vm-16-core-v1", "owner": null, "type": "Standard_D16ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.40.61.147", "internal_ip": "10.24.50.7", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-akashxdb-vm-16-core-v2", "vm_id": "698e1e49-03bd-4877-b228-c714509f7076", "name": "akashx-tvs-akashxdb-vm-16-core-v2", "owner": null, "type": "Standard_D16ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.204.167.208", "internal_ip": "10.24.50.9", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/akashx-tvs-private-vm", "vm_id": "3fbf9012-aae6-4b0d-b000-095202b0e394", "name": "akashx-tvs-private-vm", "owner": null, "type": "Standard_D4s_v3", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "98.70.38.105", "internal_ip": "10.24.50.133", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/camline-poc-16-akashxdb", "vm_id": "ffd546b0-d152-4984-afa1-6b6ca408719b", "name": "camline-poc-16-akashxdb", "owner": null, "type": "Standard_D16ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "20.40.60.106", "internal_ip": "10.24.50.6", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/AKASHX-TVS/providers/Microsoft.Compute/virtualMachines/camline-vm-unity", "vm_id": "abdef8a1-6dec-4fd0-8622-78639c911c89", "name": "camline-vm-unity", "owner": "platform-team", "type": "Standard_D4as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "AKASHX-TVS", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": "4.224.120.125", "internal_ip": "10.24.50.8", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/application-build-instance", "vm_id": "585b6715-d1ae-4e84-bd84-196fed0dde26", "name": "application-build-instance", "owner": null, "type": "Standard_D96als_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.21", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/application-build-instance-arm", "vm_id": "97bca5d9-c039-40c6-b22d-9b3cf3f29db1", "name": "application-build-instance-arm", "owner": null, "type": "Standard_D96pls_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.22", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/build-test", "vm_id": "007a2f94-e377-4678-b246-e3b590e4b25b", "name": "build-test", "owner": "rakesh@akashx.ai", "type": "Standard_D128ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.18", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-akashxdb-cn", "vm_id": "dadbd754-22d6-4e05-8da0-ed7dc3d03cfb", "name": "camline-poc-cin-vm-akashxdb-cn", "owner": "platform-team", "type": "Standard_D4s_v3", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.5", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-akashxdb-fe", "vm_id": "c74811a8-fd68-4028-9dfc-5bcf40c725b4", "name": "camline-poc-cin-vm-akashxdb-fe", "owner": "platform-team", "type": "Standard_D8as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.4", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-jupyter", "vm_id": "cdb0df57-2b63-4191-a24f-f24f1f08ed52", "name": "camline-poc-cin-vm-jupyter", "owner": "platform-team", "type": "Standard_D4as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.14", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-spark-master", "vm_id": "83e75dad-35b6-4b7a-9888-f8c918b3107a", "name": "camline-poc-cin-vm-spark-master", "owner": "platform-team", "type": "Standard_D16as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.12", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-spark-worker", "vm_id": "dedb09a0-a0f4-4e9a-9c04-88a1b74ae7dc", "name": "camline-poc-cin-vm-spark-worker", "owner": "platform-team", "type": "Standard_D48as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.13", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/camline-poc-cin-vm-unity-hive", "vm_id": "57a969ea-a153-4f0d-840d-f17090aabd1d", "name": "camline-poc-cin-vm-unity-hive", "owner": "platform-team", "type": "Standard_D4as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.10", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-cn-1", "vm_id": "b012fa50-316e-4f41-ba61-4408ca4216b7", "name": "cng-cn-1", "owner": "sahaj", "type": "Standard_B16as_v2", "state": "running", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.15", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-cn-2", "vm_id": "675afba3-9d58-4076-8695-cb76ef1ceaf1", "name": "cng-cn-2", "owner": "sahaj", "type": "Standard_B16as_v2", "state": "running", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.16", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-1", "vm_id": "129a57a7-57f9-42f6-83d3-1daa2e75bad2", "name": "cng-fe-1", "owner": "sahaj", "type": "Standard_D8as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.7", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-2", "vm_id": "bab71f82-0397-4cc0-93cc-5265b768fec3", "name": "cng-fe-2", "owner": "sahaj", "type": "Standard_D16ads_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.8", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/cng-fe-3", "vm_id": "6a8a4cbb-f7d4-4b3a-9807-ff667257febd", "name": "cng-fe-3", "owner": "sahaj", "type": "Standard_B8as_v2", "state": "running", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.9", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-cn-1", "vm_id": "821d5542-2ce1-46ca-aa36-590a7eae1169", "name": "es3-cn-1", "owner": "saurabh", "type": "Standard_D8ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.31", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-ext-cn-1", "vm_id": "fcf0f92b-fe66-41c6-9354-cd95e178ebc7", "name": "es3-ext-cn-1", "owner": "saurabh", "type": "Standard_D8ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.37", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-fe-1", "vm_id": "f3ee77f6-5c6a-4e72-9393-60bfc6fe5674", "name": "es3-fe-1", "owner": "saurabh", "type": "Standard_D8as_v5", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.28", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/es3-NVMe-oF", "vm_id": "4ce5ad36-60b3-4c44-91c6-b4c96fb82164", "name": "es3-NVMe-oF", "owner": "saurabh", "type": "Standard_D8ds_v6", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.36", "os": "Linux", "account": "akashx-dev"}, {"id": "/subscriptions/ba5a9718-2184-438f-9c5c-73c982e1a647/resourceGroups/CAMLINE-POC-CIN-WORKLOAD-RG/providers/Microsoft.Compute/virtualMachines/jyotika-database", "vm_id": "4663acb9-40e4-4c53-8db6-3435c6dab187", "name": "jyotika-database", "owner": "jyotika@akashx.ai", "type": "Standard_B8as_v2", "state": "deallocated", "state_since": null, "region": "centralindia", "resource_group": "CAMLINE-POC-CIN-WORKLOAD-RG", "subscription_id": "ba5a9718-2184-438f-9c5c-73c982e1a647", "external_ip": null, "internal_ip": "10.60.1.17", "os": "Linux", "account": "akashx-dev"}], "cost": {"period_start": "2026-06-27", "period_end": "2026-07-27", "by_service": [{"service": "Virtual Machines", "cost": 7709.54}, {"service": "Storage", "cost": 4536.16}, {"service": "Virtual Machine Licenses", "cost": 713.79}, {"service": "Log Analytics", "cost": 620.13}, {"service": "Azure Bastion", "cost": 348.33}, {"service": "Application Gateway", "cost": 260.72}, {"service": "Virtual Network", "cost": 239.67}, {"service": "NAT Gateway", "cost": 217.4}, {"service": "Load Balancer", "cost": 92.24}, {"service": "Bandwidth", "cost": 77.64}, {"service": "Azure Database for PostgreSQL", "cost": 74.95}, {"service": "Container Registry", "cost": 65.35}, {"service": "Azure Databricks", "cost": 41.84}, {"service": "Event Hubs", "cost": 21.75}, {"service": "Azure DNS", "cost": 2.94}, {"service": "Foundry Models", "cost": 2.43}, {"service": "Key Vault", "cost": 0.01}, {"service": "Logic Apps", "cost": 0.0}, {"service": "Azure App Service", "cost": 0.0}, {"service": "Event Grid", "cost": 0.0}, {"service": "Functions", "cost": 0.0}, {"service": "Service Bus", "cost": 0.0}], "total": 15024.9, "by_day": [{"date": "2026-06-27", "cost": 418.32}, {"date": "2026-06-28", "cost": 411.35}, {"date": "2026-06-29", "cost": 465.68}, {"date": "2026-06-30", "cost": 682.23}, {"date": "2026-07-01", "cost": 733.45}, {"date": "2026-07-02", "cost": 655.27}, {"date": "2026-07-03", "cost": 597.27}, {"date": "2026-07-04", "cost": 580.89}, {"date": "2026-07-05", "cost": 526.85}, {"date": "2026-07-06", "cost": 619.95}, {"date": "2026-07-07", "cost": 622.56}, {"date": "2026-07-08", "cost": 634.18}, {"date": "2026-07-09", "cost": 691.52}, {"date": "2026-07-10", "cost": 601.49}, {"date": "2026-07-11", "cost": 369.1}, {"date": "2026-07-12", "cost": 510.88}, {"date": "2026-07-13", "cost": 562.75}, {"date": "2026-07-14", "cost": 589.65}, {"date": "2026-07-15", "cost": 558.81}, {"date": "2026-07-16", "cost": 572.91}, {"date": "2026-07-17", "cost": 498.99}, {"date": "2026-07-18", "cost": 259.73}, {"date": "2026-07-19", "cost": 238.8}, {"date": "2026-07-20", "cost": 395.79}, {"date": "2026-07-21", "cost": 495.17}, {"date": "2026-07-22", "cost": 345.09}, {"date": "2026-07-23", "cost": 322.46}, {"date": "2026-07-24", "cost": 389.78}, {"date": "2026-07-25", "cost": 327.07}, {"date": "2026-07-26", "cost": 302.1}, {"date": "2026-07-27", "cost": 44.8}]}}]}, "gcp": {"provider": "gcp", "accounts": [{"account": "prod-project", "instances": [{"id": "1748385750807367649", "name": "devops-testing", "owner": "rakesh", "type": "c3d-highcpu-180", "state": "TERMINATED", "state_since": "2026-05-12T21:09:31.922-07:00", "zone": "us-central1-f", "external_ip": null, "internal_ip": "10.0.2.97", "creation_timestamp": "2026-02-19T21:28:46.835-08:00", "account": "prod-project", "project_id": "tough-cascade-402415"}], "cost": null}]}};
+const META = {"aws": {"label": "AWS", "accent": "#F0A202"}, "azure": {"label": "Azure", "accent": "#4C8DFF"}, "gcp": {"label": "GCP", "accent": "#34D399"}};
+
+function fmtMoney(n) {
+  if (n === null || n === undefined) return '—';
+  return '$' + n.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
+function stateClass(state) {
+  const s = (state || '').toLowerCase();
+  if (s.includes('running') || s === 'vm running') return 'state-running';
+  if (s.includes('stop') || s.includes('deallocat') || s.includes('terminated')) return 'state-stopped';
+  return 'state-other';
+}
+
+function fmtDuration(sinceIso) {
+  if (!sinceIso) return '—';
+  const since = new Date(sinceIso);
+  if (isNaN(since.getTime())) return '—';
+  let ms = Date.now() - since.getTime();
+  if (ms < 0) ms = 0;
+  const mins = Math.floor(ms / 60000);
+  const days = Math.floor(mins / 1440);
+  const hours = Math.floor((mins % 1440) / 60);
+  const minutes = mins % 60;
+  if (days > 0) return `${days}d ${hours}h`;
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
+
+function fmtSince(sinceIso) {
+  if (!sinceIso) return '—';
+  const d = new Date(sinceIso);
+  if (isNaN(d.getTime())) return '—';
+  return d.toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
+}
+
+function aggregateCloud(providerData) {
+  const accounts = (providerData && providerData.accounts) || [];
+  let total = 0;
+  const serviceTotals = {};
+  const dayTotals = {};
+  const instances = [];
+  const accountSummaries = [];
+
+  accounts.forEach(acct => {
+    const acctCost = (acct.cost && acct.cost.total) || 0;
+    total += acctCost;
+    accountSummaries.push({
+      account: acct.account,
+      total: acctCost,
+      instanceCount: (acct.instances || []).length,
+    });
+    if (acct.cost && acct.cost.by_service) {
+      acct.cost.by_service.forEach(s => {
+        serviceTotals[s.service] = (serviceTotals[s.service] || 0) + s.cost;
+      });
+    }
+    if (acct.cost && acct.cost.by_day) {
+      acct.cost.by_day.forEach(d => {
+        dayTotals[d.date] = (dayTotals[d.date] || 0) + d.cost;
+      });
+    }
+    (acct.instances || []).forEach(i => {
+      instances.push(Object.assign({}, i, { account: i.account || acct.account }));
+    });
+  });
+
+  const by_service = Object.entries(serviceTotals)
+    .map(([service, cost]) => ({ service, cost }))
+    .sort((a, b) => b.cost - a.cost);
+
+  const by_day = Object.entries(dayTotals)
+    .map(([date, cost]) => ({ date, cost: Math.round(cost * 100) / 100 }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  let periodStr = '';
+  for (const acct of accounts) {
+    if (acct.cost && acct.cost.period_start) {
+      periodStr = acct.cost.period_start + ' → ' + acct.cost.period_end;
+      break;
+    }
+  }
+
+  return { total, by_service, by_day, instances, accountSummaries, periodStr };
+}
+
+function buildSpendMeter() {
+  const totals = Object.entries(DATA).map(([key, d]) => ({
+    key, total: aggregateCloud(d).total
+  }));
+  const grand = totals.reduce((s, t) => s + t.total, 0);
+  document.getElementById('totalAmount').textContent = fmtMoney(grand);
+
+  let periodStr = '';
+  for (const [key, d] of Object.entries(DATA)) {
+    const p = aggregateCloud(d).periodStr;
+    if (p) { periodStr = p; break; }
+  }
+  document.getElementById('periodLabel').textContent = periodStr || 'no cost data available';
+
+  const meter = document.getElementById('spendMeter');
+  const legend = document.getElementById('spendMeterLegend');
+  meter.innerHTML = '';
+  legend.innerHTML = '';
+
+  if (grand === 0) {
+    meter.style.display = 'none';
+    legend.innerHTML = '<span>No cost data collected yet -- see README for enabling billing export per provider.</span>';
+    return;
+  }
+
+  totals.forEach(t => {
+    if (t.total <= 0) return;
+    const pct = (t.total / grand) * 100;
+    const seg = document.createElement('div');
+    seg.className = 'segment';
+    seg.style.width = pct + '%';
+    seg.style.background = META[t.key].accent;
+    meter.appendChild(seg);
+
+    const item = document.createElement('span');
+    item.innerHTML = `<span class="dot" style="background:${META[t.key].accent}"></span>${META[t.key].label}: ${fmtMoney(t.total)} (${pct.toFixed(1)}%)`;
+    legend.appendChild(item);
+  });
+}
+
+function buildCostPanel(key, d) {
+  const meta = META[key];
+  const panel = document.createElement('div');
+  panel.className = 'cloud-panel';
+
+  const agg = aggregateCloud(d);
+  const accountErrors = ((d && d.accounts) || []).filter(a => a.error);
+
+  let html = `
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:${meta.accent}"></span>${meta.label}</div>
+      <div class="cloud-total">${fmtMoney(agg.total)}</div>
+    </div>
+    <div class="stat-row">
+      <div><b>${agg.accountSummaries.length}</b> account(s)</div>
+      <div><b>${agg.instances.length}</b> instances</div>
+    </div>
+  `;
+
+  if (d && d.error) {
+    html += `<div class="empty-note">Collection error: ${d.error}</div>`;
+  }
+  accountErrors.forEach(a => {
+    html += `<div class="empty-note">Collection error (${a.account}): ${a.error}</div>`;
+  });
+
+  if (agg.accountSummaries.length > 1) {
+    html += `<div class="section-label">By account</div>`;
+    agg.accountSummaries
+      .sort((a, b) => b.total - a.total)
+      .forEach(a => {
+        html += `
+          <div class="account-row">
+            <div class="acct-name">${a.account}</div>
+            <div class="acct-count">${a.instanceCount} inst.</div>
+            <div class="acct-cost">${fmtMoney(a.total)}</div>
+          </div>`;
+      });
+  }
+
+  html += `<div class="section-label">Spend by service</div>`;
+  if (agg.by_service.length) {
+    const maxCost = Math.max(...agg.by_service.map(s => s.cost));
+    agg.by_service.slice(0, 10).forEach(s => {
+      const pct = maxCost > 0 ? (s.cost / maxCost) * 100 : 0;
+      html += `
+        <div class="cost-bar-row">
+          <div class="svc" title="${s.service}">${s.service}</div>
+          <div class="cost-bar-track"><div class="cost-bar-fill" style="width:${pct}%;background:${meta.accent}"></div></div>
+          <div class="amt">${fmtMoney(s.cost)}</div>
+        </div>`;
+    });
+  } else {
+    html += `<div class="empty-note">No cost data (billing export not enabled, or provider disabled).</div>`;
+  }
+
+  panel.innerHTML = html;
+  return panel;
+}
+
+function cliCommandFor(cloud, instance, action) {
+  // action is 'start' or 'stop'. These are copy-to-clipboard commands the
+  // person runs themselves with their own authenticated CLI session --
+  // this static dashboard never holds live cloud credentials, so it can't
+  // (and shouldn't) call these APIs directly from the browser.
+  if (cloud === 'aws') {
+    const verb = action === 'start' ? 'start-instances' : 'stop-instances';
+    const region = instance.region ? ` --region ${instance.region}` : '';
+    return `aws ec2 ${verb} --instance-ids ${instance.id}${region}`;
+  }
+  if (cloud === 'azure') {
+    const verb = action === 'start' ? 'start' : 'deallocate';
+    return `az vm ${verb} --ids "${instance.id}"`;
+  }
+  if (cloud === 'gcp') {
+    const verb = action === 'start' ? 'start' : 'stop';
+    const project = instance.project_id ? ` --project=${instance.project_id}` : '';
+    const zone = instance.zone ? ` --zone=${instance.zone}` : '';
+    return `gcloud compute instances ${verb} ${instance.name}${zone}${project}`;
+  }
+  return '';
+}
+
+function copyToClipboard(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+  }).catch(() => {
+    alert(text); // fallback if clipboard API is blocked
+  });
+}
+window.__copyToClipboard = copyToClipboard;
+
+function buildInfraPanel(key, d) {
+  const meta = META[key];
+  const panel = document.createElement('div');
+  panel.className = 'cloud-panel';
+
+  const agg = aggregateCloud(d);
+  const instances = agg.instances;
+  const running = instances.filter(i => (i.state || '').toLowerCase().includes('run')).length;
+  const total = instances.length;
+  const uid = 'infra_' + key;
+
+  let html = `
+    <div class="cloud-panel-head">
+      <div class="cloud-name"><span class="swatch" style="background:${meta.accent}"></span>${meta.label}</div>
+      <div class="cloud-total">${total} instances</div>
+    </div>
+    <div class="stat-row">
+      <div><b>${running}</b> running</div>
+      <div><b>${total - running}</b> stopped/other</div>
+      <div><b>${agg.accountSummaries.length}</b> account(s)</div>
+    </div>
+  `;
+
+  html += `<div class="section-label">Instances</div>`;
+
+  if (instances.length) {
+    const states = Array.from(new Set(instances.map(i => i.state || 'unknown'))).sort();
+    html += `
+      <div class="filter-bar">
+        <input type="text" id="${uid}_search" placeholder="Filter by name, owner, account, IP...">
+        <select id="${uid}_state">
+          <option value="">All states</option>
+          ${states.map(s => `<option value="${s}">${s}</option>`).join('')}
+        </select>
+      </div>
+    `;
+
+    html += `<div class="scroll-table"><table class="instances" id="${uid}_table"><thead><tr>
+        <th>Name</th><th>Owner</th><th>Account</th><th>Type</th><th>Location</th>
+        <th>Internal IP</th><th>External IP</th><th>State</th><th>Since</th><th>Duration</th><th>Action</th>
+      </tr></thead><tbody>`;
+    instances.forEach((i, idx) => {
+      const name = i.name || i.id || '—';
+      const type = i.type || '—';
+      const location = i.region || i.zone || i.resource_group || '—';
+      const isRunning = (i.state || '').toLowerCase().includes('run');
+      const action = isRunning ? 'stop' : 'start';
+      const cmd = cliCommandFor(key, i, action).replace(/"/g, '&quot;');
+      const searchBlob = [name, i.owner, i.account, i.internal_ip, i.external_ip, type, location]
+        .filter(Boolean).join(' ').toLowerCase();
+      html += `<tr data-state="${i.state || 'unknown'}" data-search="${searchBlob}">
+          <td>${name}</td>
+          <td>${i.owner || '—'}</td>
+          <td>${i.account || '—'}</td>
+          <td>${type}</td>
+          <td>${location}</td>
+          <td class="ip-cell">${i.internal_ip || '—'}</td>
+          <td class="ip-cell">${i.external_ip || '—'}</td>
+          <td><span class="state-pill ${stateClass(i.state)}">${i.state || 'unknown'}</span></td>
+          <td>${fmtSince(i.state_since)}</td>
+          <td>${fmtDuration(i.state_since)}</td>
+          <td><button class="action-btn" title="Copy ${action} command" data-cmd="${cmd}">${action === 'start' ? '▶ start' : '■ stop'}</button></td>
+        </tr>`;
+    });
+    html += `</tbody></table></div>`;
+    html += `<div class="no-rows-note" id="${uid}_empty" style="display:none">No instances match this filter.</div>`;
+  } else {
+    html += `<div class="empty-note">No instances found (or provider disabled/not scanned).</div>`;
+  }
+
+  panel.innerHTML = html;
+
+  if (instances.length) {
+    const searchInput = panel.querySelector(`#${uid}_search`);
+    const stateSelect = panel.querySelector(`#${uid}_state`);
+    const rows = panel.querySelectorAll(`#${uid}_table tbody tr`);
+    const emptyNote = panel.querySelector(`#${uid}_empty`);
+
+    function applyFilter() {
+      const q = searchInput.value.trim().toLowerCase();
+      const s = stateSelect.value;
+      let visible = 0;
+      rows.forEach(row => {
+        const matchesSearch = !q || row.dataset.search.includes(q);
+        const matchesState = !s || row.dataset.state === s;
+        const show = matchesSearch && matchesState;
+        row.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      emptyNote.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', applyFilter);
+    stateSelect.addEventListener('change', applyFilter);
+
+    panel.querySelectorAll('.action-btn').forEach(btn => {
+      btn.addEventListener('click', () => copyToClipboard(btn.dataset.cmd, btn));
+    });
+  }
+
+  return panel;
+}
+
+function buildResourceCostTable() {
+  const rows = [];
+  Object.entries(DATA).forEach(([key, d]) => {
+    const agg = aggregateCloud(d);
+    agg.instances.forEach(i => rows.push({ cloud: key, ...i }));
+  });
+
+  const withCost = rows.filter(r => typeof r.cost === 'number');
+  const withoutCost = rows.filter(r => typeof r.cost !== 'number');
+  withCost.sort((a, b) => b.cost - a.cost);
+
+  const note = document.getElementById('resourceCoverageNote');
+  if (rows.length === 0) {
+    note.textContent = 'No instances collected yet.';
+  } else if (withCost.length === 0) {
+    note.textContent = `0 of ${rows.length} resources have per-resource cost data. `
+      + `Per-resource cost needs extra setup per provider (AWS resource-level Cost Explorer data, `
+      + `Azure Cost Management by ResourceId, GCP BigQuery billing export) -- see README.`;
+  } else {
+    note.textContent = `${withCost.length} of ${rows.length} resources have per-resource cost data `
+      + `(${((withCost.length / rows.length) * 100).toFixed(0)}% coverage).`;
+  }
+
+  const body = document.getElementById('resourceCostBody');
+  body.innerHTML = '';
+  [...withCost, ...withoutCost].forEach(r => {
+    const meta = META[r.cloud];
+    const name = r.name || r.id || '—';
+    const location = r.region || r.zone || r.resource_group || '—';
+    const costCell = typeof r.cost === 'number'
+      ? `<td class="cost-cell">${fmtMoney(r.cost)}</td>`
+      : `<td class="cost-cell no-data">—</td>`;
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${name}</td>
+      <td><span class="cloud-tag"><span class="swatch" style="background:${meta.accent}"></span>${meta.label}</span></td>
+      <td>${r.account || '—'}</td>
+      <td>${r.type || '—'}</td>
+      <td>${location}</td>
+      <td><span class="state-pill ${stateClass(r.state)}">${r.state || 'unknown'}</span></td>
+      ${costCell}
+    `;
+    body.appendChild(row);
+  });
+}
+
+function buildOverviewStrip() {
+  const strip = document.getElementById('overviewStrip');
+  strip.innerHTML = '';
+
+  const clouds = ['aws', 'azure', 'gcp'].filter(k => DATA[k]);
+  const grand = clouds.reduce((s, k) => s + aggregateCloud(DATA[k]).total, 0);
+
+  const grandCard = document.createElement('div');
+  grandCard.className = 'overview-card grand';
+  grandCard.innerHTML = `<div class="oc-label">Overall cost (all clouds)</div><div class="oc-amount">${fmtMoney(grand)}</div>`;
+  strip.appendChild(grandCard);
+
+  clouds.forEach(k => {
+    const agg = aggregateCloud(DATA[k]);
+    const meta = META[k];
+    const card = document.createElement('div');
+    card.className = 'overview-card';
+    card.innerHTML = `<div class="oc-label"><span class="dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${meta.accent}"></span>${meta.label} (period)</div><div class="oc-amount">${fmtMoney(agg.total)}</div>`;
+    strip.appendChild(card);
+  });
+}
+
+function buildDailyCostTable() {
+  const clouds = ['aws', 'azure', 'gcp'].filter(k => DATA[k]);
+  const perCloudDays = {};
+  const allDates = new Set();
+
+  clouds.forEach(k => {
+    const agg = aggregateCloud(DATA[k]);
+    const map = {};
+    agg.by_day.forEach(d => { map[d.date] = d.cost; allDates.add(d.date); });
+    perCloudDays[k] = map;
+  });
+
+  const dates = Array.from(allDates).sort().reverse(); // most recent first
+
+  const head = document.getElementById('dailyCostHead');
+  const body = document.getElementById('dailyCostBody');
+
+  if (dates.length === 0) {
+    head.innerHTML = '<th>Date</th>';
+    body.innerHTML = `<tr><td colspan="1" style="text-align:left;color:var(--muted)">No daily cost data available yet -- see README for enabling billing export per provider.</td></tr>`;
+    return;
+  }
+
+  head.innerHTML = '<th>Date</th>' + clouds.map(k => `<th>${META[k].label}</th>`).join('') + '<th>Total</th>';
+
+  body.innerHTML = '';
+  dates.forEach(date => {
+    let rowTotal = 0;
+    const cells = clouds.map(k => {
+      const v = perCloudDays[k][date];
+      if (typeof v === 'number') { rowTotal += v; return `<td>${fmtMoney(v)}</td>`; }
+      return `<td style="color:var(--muted)">—</td>`;
+    }).join('');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${date}</td>${cells}<td class="total-cell">${fmtMoney(rowTotal)}</td>`;
+    body.appendChild(tr);
+  });
+}
+
+function getLookbackDays() {
+  for (const key of ['aws', 'azure', 'gcp']) {
+    const d = DATA[key];
+    if (!d || !d.accounts) continue;
+    for (const acct of d.accounts) {
+      if (acct.cost && acct.cost.period_start && acct.cost.period_end) {
+        const days = (new Date(acct.cost.period_end) - new Date(acct.cost.period_start)) / (24 * 60 * 60 * 1000);
+        if (days > 0) return days;
+      }
+    }
+  }
+  return 30;
+}
+
+function monthlyEstimate(periodCost, lookbackDays) {
+  return (periodCost / lookbackDays) * 30;
+}
+
+function buildSuggestions() {
+  const list = document.getElementById('suggestionsList');
+  const suggestions = [];
+  const clouds = ['aws', 'azure', 'gcp'].filter(k => DATA[k]);
+  const lookbackDays = getLookbackDays();
+
+  let allInstances = [];
+  clouds.forEach(k => {
+    aggregateCloud(DATA[k]).instances.forEach(i => allInstances.push({ cloud: k, ...i }));
+  });
+
+  const DAY_MS = 24 * 60 * 60 * 1000;
+  const nonProdPattern = /dev|test|staging|stage|sandbox|qa|demo/i;
+
+  function resourceList(instances, limit) {
+    return instances.slice(0, limit || 5).map(i => {
+      const label = `${i.name || i.id} (${META[i.cloud].label}${i.account ? ', ' + i.account : ''})`;
+      return typeof i.cost === 'number'
+        ? `${label} &mdash; ${fmtMoney(monthlyEstimate(i.cost, lookbackDays))}/mo est.`
+        : label;
+    }).join('<br>');
+  }
+
+  // 1. Long-running non-prod instances -- the single most common source of
+  //    avoidable spend: dev/test boxes left running around the clock.
+  const longRunningNonProd = allInstances.filter(i => {
+    if (!(i.state || '').toLowerCase().includes('run')) return false;
+    if (!i.state_since) return false;
+    const isNonProd = nonProdPattern.test(i.account || '') || nonProdPattern.test(i.name || '');
+    if (!isNonProd) return false;
+    const ms = Date.now() - new Date(i.state_since).getTime();
+    return ms > 3 * DAY_MS;
+  });
+  if (longRunningNonProd.length > 0) {
+    const withCost = longRunningNonProd.filter(i => typeof i.cost === 'number');
+    const estTotal = withCost.reduce((s, i) => s + monthlyEstimate(i.cost, lookbackDays), 0);
+    const savingsLine = withCost.length > 0
+      ? ` Stopping or scheduling these off nights/weekends could save roughly ${fmtMoney(estTotal)}/mo.`
+      : ` Enable per-resource cost to see an estimated savings figure for these.`;
+    suggestions.push({
+      level: 'high',
+      text: `<b>Action: schedule or stop these ${longRunningNonProd.length} dev/test/staging instance(s)</b> `
+        + `-- running continuously for 3+ days:<br>${resourceList(longRunningNonProd)}${savingsLine}`
+    });
+  }
+
+  // 2. Stopped instances that still have per-resource cost attached --
+  //    usually means attached storage/EIPs/disks are still billing even
+  //    though the compute itself is off.
+  const stoppedWithCost = allInstances.filter(i =>
+    (i.state || '').toLowerCase().includes('stop') && typeof i.cost === 'number' && i.cost > 0
+  );
+  if (stoppedWithCost.length > 0) {
+    const total = stoppedWithCost.reduce((s, i) => s + i.cost, 0);
+    suggestions.push({
+      level: 'high',
+      text: `<b>Action: review or delete leftover storage/IPs on these ${stoppedWithCost.length} stopped instance(s)</b> `
+        + `-- still generating ${fmtMoney(total)} this period even though compute is off:<br>${resourceList(stoppedWithCost)}`
+    });
+  }
+
+  // 3. Any single service dominating a cloud's spend -- flag for
+  //    reserved-instance / savings-plan / committed-use review.
+  clouds.forEach(k => {
+    const agg = aggregateCloud(DATA[k]);
+    if (agg.total <= 0 || agg.by_service.length === 0) return;
+    const top = agg.by_service[0];
+    const share = top.cost / agg.total;
+    if (share > 0.5) {
+      const label = k === 'aws' ? 'Reserved Instances or a Savings Plan'
+        : k === 'azure' ? 'Reserved VM Instances or an Azure Savings Plan'
+        : 'Committed Use Discounts';
+      suggestions.push({
+        level: 'medium',
+        text: `<b>Action: evaluate ${label} on ${META[k].label}</b> -- <b>${top.service}</b> alone accounts for `
+          + `${(share * 100).toFixed(0)}% of that cloud's spend (${fmtMoney(top.cost)}). If usage is steady, `
+          + `committing to a discount plan could meaningfully cut this.`
+      });
+    }
+  });
+
+  // 4. Long-running instances in general (any environment) past 30 days --
+  //    worth a right-sizing look since we can't see CPU/memory utilization
+  //    from inventory + billing data alone.
+  const veryLongRunning = allInstances.filter(i => {
+    if (!(i.state || '').toLowerCase().includes('run') || !i.state_since) return false;
+    const ms = Date.now() - new Date(i.state_since).getTime();
+    return ms > 30 * DAY_MS;
+  });
+  if (veryLongRunning.length > 0) {
+    suggestions.push({
+      level: 'medium',
+      text: `<b>Action: check actual utilization on these ${veryLongRunning.length} instance(s)</b> `
+        + `-- running for 30+ days straight:<br>${resourceList(veryLongRunning)}<br>`
+        + `This dashboard has no CPU/memory data, so check the provider console to see if a smaller instance type would do.`
+    });
+  }
+
+  // 5. Coverage gap -- encourage enabling per-resource cost so future
+  //    suggestions (and the Resource Cost tab) get sharper.
+  const withCost = allInstances.filter(i => typeof i.cost === 'number').length;
+  if (allInstances.length > 0 && withCost < allInstances.length) {
+    const pct = ((withCost / allInstances.length) * 100).toFixed(0);
+    suggestions.push({
+      level: 'info',
+      text: `Only ${pct}% of instances have per-resource cost data. Enabling it (see README) would let these `
+        + `suggestions point at specific expensive resources instead of just services.`
+    });
+  }
+
+  // 6. Name the single most expensive individual resources, when we have
+  //    per-resource cost -- a concrete "look at these first" list rather
+  //    than just aggregate percentages.
+  const rankedByCost = allInstances
+    .filter(i => typeof i.cost === 'number' && i.cost > 0)
+    .sort((a, b) => b.cost - a.cost)
+    .slice(0, 5);
+  if (rankedByCost.length > 0) {
+    suggestions.push({
+      level: 'high',
+      text: `<b>Action: review these highest-cost resources first</b>:<br>${resourceList(rankedByCost)}`
+    });
+  }
+
+  // 7. Resources with no Owner tag/label -- not a cost issue directly, but
+  //    untagged resources are the ones most likely to be forgotten and
+  //    left running indefinitely, and the hardest to chase down later.
+  const untagged = allInstances.filter(i => !i.owner);
+  if (untagged.length > 0 && allInstances.length > 0) {
+    const pct = ((untagged.length / allInstances.length) * 100).toFixed(0);
+    const sortedUntagged = [...untagged].sort((a, b) => (b.cost || 0) - (a.cost || 0));
+    suggestions.push({
+      level: 'medium',
+      text: `<b>Action: add an Owner tag to these resources</b> -- ${untagged.length} of ${allInstances.length} `
+        + `instances (${pct}%) have none, making them the ones most likely to be forgotten and left running:<br>${resourceList(sortedUntagged)}`
+    });
+  }
+
+  // 8. Old-generation instance families -- newer generations are almost
+  //    always better price-for-performance on all three clouds. This is a
+  //    pattern match on type name, not a performance benchmark.
+  const OLD_GEN_PATTERNS = {
+    aws: /^(t2|m4|m3|c4|c3|r4|r3|i2|d2)\./i,
+    azure: /^(standard_a|standard_d[0-9]+(_v1)?$|standard_d[0-9]+_v2|standard_g)/i,
+    gcp: /^n1-/i,
+  };
+  const oldGen = allInstances.filter(i => {
+    const pattern = OLD_GEN_PATTERNS[i.cloud];
+    return pattern && i.type && pattern.test(i.type);
+  });
+  if (oldGen.length > 0) {
+    suggestions.push({
+      level: 'medium',
+      text: `<b>Action: migrate these ${oldGen.length} instance(s) to a newer generation</b> `
+        + `(older families are almost always cheaper-and-faster to replace in the same size class):<br>${resourceList(oldGen)}`
+    });
+  }
+
+  // 9. Large instance types sitting in non-prod-looking accounts/names --
+  //    a mismatch worth a second look, though this is a naming heuristic,
+  //    not a utilization measurement.
+  const oversizedNonProd = allInstances.filter(i => {
+    const isNonProd = nonProdPattern.test(i.account || '') || nonProdPattern.test(i.name || '');
+    if (!isNonProd || !i.type) return false;
+    return /(4|8|16|24|32|48|64|96)xlarge/i.test(i.type) || /_v[3-9].*[0-9]{2,}/i.test(i.type);
+  });
+  if (oversizedNonProd.length > 0) {
+    suggestions.push({
+      level: 'medium',
+      text: `<b>Action: confirm these ${oversizedNonProd.length} large instance(s) actually need that size</b> `
+        + `-- sitting in accounts/names that look like dev/test/staging:<br>${resourceList(oversizedNonProd)}`
+    });
+  }
+
+  // 10. A high proportion of stopped instances overall -- even without
+  //     per-resource cost, a large stopped fleet is worth a cleanup pass
+  //     (attached disks/IPs/snapshots often keep billing after stop).
+  const stoppedInstances = allInstances.filter(i => (i.state || '').toLowerCase().includes('stop') || (i.state || '').toLowerCase().includes('deallocat'));
+  const stoppedCount = stoppedInstances.length;
+  if (allInstances.length >= 5 && stoppedCount / allInstances.length > 0.5) {
+    const pct = ((stoppedCount / allInstances.length) * 100).toFixed(0);
+    const sortedStopped = [...stoppedInstances].sort((a, b) => (b.cost || 0) - (a.cost || 0));
+    suggestions.push({
+      level: 'medium',
+      text: `<b>Action: run a cleanup pass on these stopped instances</b> -- ${stoppedCount} of ${allInstances.length} `
+        + `(${pct}%) are currently stopped/deallocated, and attached disks/IPs/snapshots often keep billing regardless:`
+        + `<br>${resourceList(sortedStopped, 8)}`
+    });
+  }
+
+  // 11. One account/tenant dominating a cloud's spend when multiple
+  //     accounts are configured -- useful for spotting where to focus
+  //     cost-review effort first.
+  clouds.forEach(k => {
+    const agg = aggregateCloud(DATA[k]);
+    if (agg.accountSummaries.length < 2 || agg.total <= 0) return;
+    const sorted = [...agg.accountSummaries].sort((a, b) => b.total - a.total);
+    const top = sorted[0];
+    const share = top.total / agg.total;
+    if (share > 0.6) {
+      suggestions.push({
+        level: 'info',
+        text: `On <b>${META[k].label}</b>, account <b>${top.account}</b> accounts for ${(share * 100).toFixed(0)}% `
+          + `of that cloud's total spend (${fmtMoney(top.total)} of ${fmtMoney(agg.total)}) across `
+          + `${agg.accountSummaries.length} accounts -- the natural place to focus a closer cost review first.`
+      });
+    }
+  });
+
+  if (suggestions.length === 0) {
+    list.innerHTML = `<div class="empty-note">No obvious savings opportunities found from the current inventory and cost data.</div>`;
+    return;
+  }
+
+  list.innerHTML = '';
+  suggestions.forEach(s => {
+    const row = document.createElement('div');
+    row.className = 'suggestion-row';
+    row.innerHTML = `<span class="sug-badge sug-${s.level}">${s.level}</span><div class="sug-text">${s.text}</div>`;
+    list.appendChild(row);
+  });
+}
+
+function setupTabs() {
+  const buttons = document.querySelectorAll('.tab-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+function build() {
+  buildSpendMeter();
+  setupTabs();
+
+  buildOverviewStrip();
+  buildDailyCostTable();
+  buildSuggestions();
+
+  const costGrid = document.getElementById('costGrid');
+  const infraGrid = document.getElementById('infraGrid');
+  ['aws', 'azure', 'gcp'].forEach(key => {
+    if (DATA[key]) {
+      costGrid.appendChild(buildCostPanel(key, DATA[key]));
+      infraGrid.appendChild(buildInfraPanel(key, DATA[key]));
+    }
+  });
+
+  buildResourceCostTable();
+}
+
+build();
+</script>
+
+
+</body></html>
