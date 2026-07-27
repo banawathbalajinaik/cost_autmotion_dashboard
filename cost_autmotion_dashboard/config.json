@@ -1,0 +1,37 @@
+{
+  "aws": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "accounts": [
+      { "name": "prod", "profile": null }
+    ]
+  },
+  "azure": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "directories": [
+      {
+        "name": "akashx-duplo",
+        "tenant_id_env": "AZURE_TENANT_ID",
+        "client_id_env": "AZURE_CLIENT_ID",
+        "client_secret_env": "AZURE_CLIENT_SECRET",
+        "subscription_ids": ["b0edf187-e8c0-49b2-81ea-895c89d912b0"]
+      },
+      {
+        "name": "akashx-dev",
+        "tenant_id_env": "AZURE_TENANT_ID_2",
+        "client_id_env": "AZURE_CLIENT_ID_2",
+        "client_secret_env": "AZURE_CLIENT_SECRET_2",
+        "subscription_ids": ["ba5a9718-2184-438f-9c5c-73c982e1a647"]
+      }
+    ]
+  },
+  "gcp": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "projects": [
+      { "name": "prod-project", "project_id": "tough-cascade-402415",
+        "credentials_file": "", "billing_bq_table": "" }
+    ]
+  }
+}

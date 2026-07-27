@@ -1,0 +1,42 @@
+{
+  "aws": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "accounts": [
+      { "name": "prod", "profile": "prod" },
+      { "name": "dev", "profile": "dev" }
+    ]
+  },
+  "azure": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "directories": [
+      {
+        "name": "main-tenant",
+        "tenant_id_env": "AZURE_TENANT_ID",
+        "client_id_env": "AZURE_CLIENT_ID",
+        "client_secret_env": "AZURE_CLIENT_SECRET",
+        "subscription_ids": []
+      },
+      {
+        "name": "second-tenant",
+        "tenant_id_env": "AZURE_TENANT_ID_2",
+        "client_id_env": "AZURE_CLIENT_ID_2",
+        "client_secret_env": "AZURE_CLIENT_SECRET_2",
+        "subscription_ids": []
+      }
+    ]
+  },
+  "gcp": {
+    "enabled": true,
+    "cost_lookback_days": 30,
+    "projects": [
+      {
+        "name": "prod-project",
+        "project_id": "",
+        "credentials_file": "",
+        "billing_bq_table": ""
+      }
+    ]
+  }
+}

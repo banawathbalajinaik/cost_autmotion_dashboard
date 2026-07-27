@@ -1,0 +1,46 @@
+steps:
+  - name: python:3.12-slim
+    args:
+      - '-c'
+      - |
+        ls
+        pip install -r requirements.txt --break-system-packages
+        python run_all.py
+    entrypoint: bash
+    secretEnv:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+      - AZURE_CLIENT_SECRET
+      - AZURE_TENANT_ID
+      - AZURE_CLIENT_ID
+      - AZURE_TENANT_ID_2
+      - AZURE_CLIENT_ID_2
+      - AZURE_CLIENT_SECRET_2
+  - name: gcr.io/cloud-builders/gsutil
+    args:
+      - cp
+      - dashboard.html
+      - gs://balaji-testing/cloud_cost_automation/dashboard.html
+options:
+  logging: CLOUD_LOGGING_ONLY
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/aws-access-key-id/versions/latest
+      env: AWS_ACCESS_KEY_ID
+    - versionName: projects/$PROJECT_ID/secrets/aws-secret-access-key/versions/latest
+      env: AWS_SECRET_ACCESS_KEY
+    - versionName: projects/$PROJECT_ID/secrets/azure-tenant-id/versions/latest
+      env: AZURE_TENANT_ID
+    - versionName: projects/$PROJECT_ID/secrets/azure-client-id/versions/latest
+      env: AZURE_CLIENT_ID
+    - versionName: projects/531037612869/secrets/azure-client-secret/versions/1
+      env: AZURE_CLIENT_SECRET
+    - versionName: projects/$PROJECT_ID/secrets/azure-tenant-id-2/versions/latest
+      env: AZURE_TENANT_ID_2
+    - versionName: projects/$PROJECT_ID/secrets/azure-client-id-2/versions/latest
+      env: AZURE_CLIENT_ID_2
+    - versionName: projects/$PROJECT_ID/secrets/azure-client-secret-2/versions/latest
+      env: AZURE_CLIENT_SECRET_2
+
+
+
